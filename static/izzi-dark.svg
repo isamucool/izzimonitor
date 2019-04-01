@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="115px" height="46px" viewBox="0 0 115 46" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.1 (47250) - http://www.bohemiancoding.com/sketch -->
+    <title>color</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="color" fill-rule="nonzero">
+            <polygon id="Shape" fill="#000000" points="90.659 31.154 97.892 31.154 97.892 8.442 90.659 8.442"></polygon>
+            <polygon id="Shape" fill="#FFCD02" points="90.659 45.268 97.892 45.268 97.892 38.77 90.659 38.77"></polygon>
+            <polygon id="Shape" fill="#D31772" points="106.674 15.366 114.253 15.366 114.253 8.442 106.673 8.442"></polygon>
+            <polygon id="Shape" fill="#F47E28" points="16.464 6.925 23.639 6.925 23.639 0 16.464 0"></polygon>
+            <polygon id="Shape" fill="#00B0AC" points="0 37.253 7.326 37.253 7.326 30.687 0 30.687"></polygon>
+            <path d="M16.464,37.253 L23.639,37.253 L23.639,14.963 L16.464,14.963 L16.464,37.253 Z M54.45,8.443 L29.82,8.443 L29.82,15.366 L44.674,15.366 L29.413,30.507 L29.413,37.431 L54.45,37.431 L54.45,30.507 L39.662,30.507 L54.451,15.367 L54.45,8.443 Z M84.57,8.443 L59.94,8.443 L59.94,15.366 L74.794,15.366 L59.537,30.507 L59.537,37.431 L84.57,37.431 L84.57,30.507 L69.778,30.507 L84.57,15.367 L84.57,8.443 Z" id="Shape" fill="#000000"></path>
+        </g>
+    </g>
+</svg>
