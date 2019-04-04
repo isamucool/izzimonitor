@@ -3,35 +3,31 @@
     font-family: 'PT Sans', sans-serif;
   }
 
-nav {
+#header {
     display: flex;
-    flex-direction: row;
     width: 100%;
-    height: 50px;
 }
 
-nav img {
-    width: 25%;
-    height: 80%;
+#logo{
+    margin: auto;
+    width: 30%;
+    text-align: center;
+   
 }
 
-nav h1 {
-    text-align: left;
-    width: 75%;
-    height: 50%;
+#headTitle {
+    width: 70%;
+    padding-left: 5%;
+    vertical-align: middle;
+    
 }
+
 #wrapper {
     display: block;
     text-align: center;
     max-width: 100%;
 }
 
-#wrapper table {
-    display: inline-block;
-    width: 100%;
-}
-
-#wrapper table tr td{
-    width: 20%;
-    text-align: center;
+@tableTilte{
+    background-color: red;
 }
