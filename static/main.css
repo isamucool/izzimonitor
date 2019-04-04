@@ -3,9 +3,18 @@
     font-family: 'PT Sans', sans-serif;
   }
 
+body {
+    background-color: #e5e7ea;
+}
+
 #header {
-    display: flex;
+    position: static;
+    display: inline-flex;
     width: 100%;
+    height: 80px;
+    margin-top: -08px;
+    box-shadow:0px 6px 6px 0px #000000;
+    background-color: #fff;
 }
 
 #logo{
@@ -29,28 +38,36 @@
 }
 
 .tableTitle{
-    
-    background-color: red;
+    background-color: #434951;
+    color:#cc9f30;
 }
 
 .tableHeaders {
+    border: 2px solid black ;
     display: flex;
-    width: 80%;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.tableHeaders div {
+    #border: 2px solid black ;
+    font-weight: bold;
+    #flex-grow: 1;
+    flex-basis: 20%;
+    
 }
 
 .tableRow {
     display: flex;
+    justify-content: space-evenly;
     
-}
-
-.tableHeaders div {
-    font-weight: bold;
-    width: 25%;
 }
 
 
 .tableRow div {
     width: 20%;
+     flex-grow: 1;
+     border: .5px solid black ;
     
 }
 
