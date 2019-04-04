@@ -28,6 +28,29 @@
     max-width: 100%;
 }
 
-@tableTilte{
+.tableTitle{
+    
     background-color: red;
 }
+
+.tableHeaders {
+    display: flex;
+    width: 80%;
+}
+
+.tableRow {
+    display: flex;
+    
+}
+
+.tableHeaders div {
+    font-weight: bold;
+    width: 25%;
+}
+
+
+.tableRow div {
+    width: 20%;
+    
+}
+
