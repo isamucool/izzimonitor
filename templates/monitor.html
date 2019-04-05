@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+        <script defer src="https://use.fontawesome.com/releases/v5.8.1/js/all.js" integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ" crossorigin="anonymous"></script>
         <title>Monitoreo Siebel izzi</title>
     </head>
     <body>
@@ -36,19 +37,19 @@
                         </div>
                         <div class="tableRow">
                             <div>{{serverData1[0]}}</div>
-                            <div>{{serverData1[2]}}</div>
+                            <div>{{serverData1[2]}}  <i class="fas fa-circle run"></i></div>
                             <div>{{serverData1[1]}}</div>
                             <div>{{serverData1[3]}}</div>
                         </div>
                         <div class="tableRow">
                             <div>{{serverData2[0]}}</div>
-                            <div>{{serverData2[2]}}</div>
+                            <div>{{serverData2[2]}}  <i class="fas fa-circle ok"></i></div>
                             <div>{{serverData2[1]}}</div>
                             <div>{{serverData2[3]}}</div>
                         </div>
                        <div class="tableRow">
                             <div>{{serverData3[0]}}</div>
-                            <div>{{serverData3[2]}}</div>
+                            <div>{{serverData3[2]}}  <i class="fas fa-circle error"></i></div>
                             <div>{{serverData3[1]}}</div>
                             <div>{{serverData3[3]}}</div>
                         </div>                    

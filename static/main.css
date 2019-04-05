@@ -1,7 +1,10 @@
 
-*{
+* {
+    
     font-family: 'PT Sans', sans-serif;
-  }
+    
+}
+  
 
 body {
     background-color: #e5e7ea;
@@ -40,10 +43,12 @@ body {
 
 #monitorLeft{
     flex-grow: 1;
+    margin: 0px 5px;
 }
 
 #monitorRight{
-    flex-grow: 1;
+    flex-grow: 3;
+    margin: 0px 5px;
 }
 .tableTitle{
     background-color: #434951;
@@ -67,8 +72,8 @@ body {
 
 .tableRow {
     display: flex;
-    justify-content: space-evenly;
-    
+    justify-content: space-around;
+
 }
 
 
@@ -76,7 +81,21 @@ body {
     width: 20%;
      flex-grow: 1;
      border: .5px solid black ;
+     font-size: 12px;
     
+}
+
+.run{
+    color: green;
+}
+
+.ok {
+    color: blue;
+    
+} 
+
+.error {
+    color: red;
 }
 
 

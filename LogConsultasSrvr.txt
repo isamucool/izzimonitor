@@ -25,8 +25,8 @@ srvrmgr> list server show HOST_NAME,SBLMGR_PID,SV_DISP_STATE,START_TIME
 HOST_NAME    SBLMGR_PID  SV_DISP_STATE  START_TIME           
 -----------  ----------  -------------  -------------------  
 CVSOUIFSYSM  264         Ejecutando     2019-03-26 12:35:32  
-CVSOUIAPP1M  11424       Ejecutando     2019-03-26 12:33:58  
-CVSOUIGW1M   10692       Ejecutando     2019-03-26 12:32:01  
+CVSOUIAPP1M  11424       Activado     2019-03-26 12:33:58  
+CVSOUIGW1M   10692       Apagar     2019-03-26 12:32:01  
 
 3 rows returned.
 
