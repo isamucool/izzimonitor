@@ -5,118 +5,152 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta http-equiv="refresh" content="60">
-        <title>Monitoreo Siebel izzi</title>
         <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+        <title>Monitoreo Siebel izzi</title>
     </head>
     <body>
+        <!--Contenedor del encabezado-->
         <div id="header">
-            <nav>
-                <img src="{{ url_for('static', filename='izzi-dark.svg')}}" alt="izzi logo dark">
-                <h1>Monitoreo izzi Siebel</h1>
-            </nav>
+                <div id="logo">
+                    <img src="{{ url_for('static', filename='izzi-dark.svg')}}" alt="izzi logo dark">
+                </div>
+                <div id="headTitle">
+                    <h1>Monitoreo Siebel izzi</h1>
+                </div>
         </div>
-        <div id="wrapper">
-            <table>
-                <!---------------------------------------- Status de Servidores -------------------------------------------->
-                <thead>
-                    <tr>
-                        <th>Servidor</th>
-                        <th>Estatus</th>
-                        <th>PID</th>
-                        <th>Fecha de Inicio</th>
-                    </tr>        
-                </thead>
-                <tr>
-                    <td>{{serverData1[0]}}</td>
-                    {% if serverData1[2] == 'Ejecutando' %}
-                        <td style="background-color: green">{{serverData1[2]}}</td>
-                        {% else %}
-                        <td style="background-color: red">{{serverData1[2]}}</td>
-                    {% endif %}
-                    <td>{{serverData1[1]}}</td>
-                    <td>{{serverData1[3] + serverData1[4]}}</td>
-                </tr>
-                <tr>
-                    <td>{{serverData2[0]}}</td>
-                    {% if serverData2[2] == 'Ejecutando' %}
-                        <td style="background-color: green">{{serverData2[2]}}</td>
-                        {% else %}
-                        <td style="background-color: red">{{serverData2[2]}}</td>
-                    {% endif %}
-                    <td>{{serverData2[1]}}</td>
-                    <td>{{serverData2[3] + serverData2[4]}}</td>
-                </tr>
-                <tr>
-                    <td>{{serverData3[0]}}</td>
-                    {% if serverData3[2] == 'Ejecutando' %}
-                        <td style="background-color: green">{{serverData3[2]}}</td>
-                        {% else %}
-                        <td style="background-color: red">{{serverData3[2]}}</td>
-                    {% endif %}
-                    <td>{{serverData3[1]}}</td>
-                    <td>{{serverData3[3] + serverData3[4]}}</td>
-                </tr>
-                <!---------------------------------------- Status de Componentes -------------------------------------------->
-                <thead>
-                    <tr>
-                        <th>Servidor</th>
-                        <th>Componente</th>
-                        <th>Estatus</th>
-                        <th>Tasks</th>
-                    </tr>
-                </thead>
-                <tr>
-                    <td>{{componentData1[0]}}</td>
-                    <td>{{componentData1[1]}}</td>
-                    {% if componentData1[6] == 'Ejecutando' %}
-                    <td style="background-color: green">{{componentData1[6]}}</td>
-                        {% else %}
-                        <td style="background-color: red">{{componentData1[6]}}</td>
-                    {% endif %}
-                    <td><embed src="{{graph_data|safe}}" type="image/svg+xml" style="max-width: 400px;"></td>
-                </tr>
-                <tr>
-                    <td>{{componentData2[0]}}</td>
-                    <td>{{componentData2[1]}}</td>
-                    {% if componentData2[6] == 'Ejecutando' %}
-                        <td style="background-color: green">{{componentData2[6]}}</td>
-                            {% else %}
-                            <td style="background-color: red">{{componentData2[6]}}</td>
-                        {% endif %}
-                    <td><embed src="{{graph2_data|safe}}" type="image/svg+xml" style="max-width: 400px;"></td>
-                </tr>
-                <tr>
-                    <td>{{componentData3[0]}}</td>
-                    <td>{{componentData3[1]}}</td>
-                    {% if componentData3[6] == 'Ejecutando' %}
-                        <td style="background-color: green">{{componentData3[6]}}</td>
-                            {% else %}
-                            <td style="background-color: red">{{componentData3[6]}}</td>
-                        {% endif %}
-                    <td><embed src="{{graph3_data|safe}}" type="image/svg+xml" style="max-width: 400px;"></td>
-                </tr>
-                <!------------------------------------ Status de Tareas Activas -------------------------------------------->
-                <thead>
-                    <tr>
-                        <th>Servidor</th>
-                        <th>Componente</th>
-                        <th>Task_ID</th>
-                        <th>PID</th>
-                        <th>Estatus</th>
-                        <th>Fecha</th>
-                        <th>Operacion</th>
-                    </tr>  
-                 </thead>
-                 <tr>
-                     <td>{{taskData1[0]}}</td>
-                     <td>{{taskData1[1]}}</td>
-                     <td>{{taskData1[2]}}</td>
-                     <td>{{taskData1[3]}}</td>
-                     <td>{{taskData1[4]}}</td>
-                     <td>{{taskData1[5] + taskData1[6]}}</td>
-                     <td>{{taskData1[9] + taskData1[10] + taskData1[11]}}</td>
-                 </tr>
-            </table>
+        <div id=wrapper>
+            <div id="monitorLeft" >
+                <div id="servers">
+                    <div class="tableTitle">
+                        <h2>Servidores</h2>
+                    </div>
+                    <div id="serverData">
+                        <div class="tableHeaders">
+                            <div>Servidor</div>
+                            <div>Estatus</div>
+                            <div>PID</div>
+                            <div>Fecha de Inicio</div>
+                        </div>
+                        <div class="tableRow">
+                            <div>{{serverData1[0]}}</div>
+                            <div>{{serverData1[2]}}</div>
+                            <div>{{serverData1[1]}}</div>
+                            <div>{{serverData1[3]}}</div>
+                        </div>
+                        <div class="tableRow">
+                            <div>{{serverData2[0]}}</div>
+                            <div>{{serverData2[2]}}</div>
+                            <div>{{serverData2[1]}}</div>
+                            <div>{{serverData2[3]}}</div>
+                        </div>
+                       <div class="tableRow">
+                            <div>{{serverData3[0]}}</div>
+                            <div>{{serverData3[2]}}</div>
+                            <div>{{serverData3[1]}}</div>
+                            <div>{{serverData3[3]}}</div>
+                        </div>                    
+                    </div>
+                </div>
+                <div id="components">
+                    <div class="tableTitle">
+                        <h2>Componentes</h2>
+                    </div>
+                    <div id="componentData">
+                        <div class="tableHeaders">
+                            <div>Servidor</div>
+                            <div>Componente</div>
+                            <div>Estatus</div>
+                            <div>Task ID</div>
+                        </div>
+                        <div class="tableRow">
+                            <div>{{componentData1[0]}}</div>
+                            <div>{{componentData1[1]}}</div>
+                            <div>{{componentData1[6]}}</div>
+                            <div>{{componentData1[0]}}</div>
+                        </div>
+                        <div class="tableRow">
+                            <div>{{serverData1[0]}}</div>
+                            <div>{{serverData1[0]}}</div>
+                            <div>{{serverData1[0]}}</div>
+                            <div>{{serverData1[0]}}</div>
+                        </div>
+                       <div class="tableRow">
+                            <div>{{serverData1[0]}}</div>
+                            <div>{{serverData1[0]}}</div>
+                            <div>{{serverData1[0]}}</div>
+                            <div>{{serverData1[0]}}</div>
+                        </div>
+                        <div class="tableRow">
+                            <div>{{serverData1[0]}}</div>
+                            <div>{{serverData1[0]}}</div>
+                            <div>{{serverData1[0]}}</div>
+                            <div>{{serverData1[0]}}</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="gauge">
+                    <div class="tableTitle">
+                        <h2>Sesiones Maximas</h2>
+                    </div>
+                    <div>
+                        <embed src="{{graph2_data|safe}}" type="image/svg+xml" style="max-width: 400px;">
+                    </div>
+                </div>
+            </div>
+            <div id="monitorRight">
+                 <div id="Tasks">
+                    <div class="tableTitle">
+                        <h2>Tareas</h2>
+                    </div>
+                    <div id="taskData">
+                        <div class="tableHeaders">
+                            <div>Servidor</div>
+                            <div>Componente</div>
+                            <div>TaskID</div>
+                            <div>PID</div>
+                            <div>Estatus</div>
+                            <div>Fecha</div>
+                            <div>Operacion</div>
+                        </div>
+                        <div class="tableRow">
+                            <div>{{serverData1[0]}}</div>
+                            <div>{{serverData1[0]}}</div>
+                            <div>{{serverData1[0]}}</div>
+                            <div>{{serverData1[0]}}</div>
+                            <div>{{serverData1[0]}}</div>
+                            <div>{{serverData1[0]}}</div>
+                            <div>{{serverData1[0]}}</div>
+                        </div>
+                        <div class="tableRow">
+                            <div>{{serverData1[0]}}</div>
+                            <div>{{serverData1[0]}}</div>
+                            <div>{{serverData1[0]}}</div>
+                            <div>{{serverData1[0]}}</div>
+                            <div>{{serverData1[0]}}</div>
+                            <div>{{serverData1[0]}}</div>
+                            <div>{{serverData1[0]}}</div>
+                        </div>
+                       <div class="tableRow">
+                            <div>{{serverData1[0]}}</div>
+                            <div>{{serverData1[0]}}</div>
+                            <div>{{serverData1[0]}}</div>
+                            <div>{{serverData1[0]}}</div>
+                            <div>{{serverData1[0]}}</div>
+                            <div>{{serverData1[0]}}</div>
+                            <div>{{serverData1[0]}}</div>
+                        </div>
+                        <div class="tableRow">
+                            <div>{{serverData1[0]}}</div>
+                            <div>{{serverData1[0]}}</div>
+                            <div>{{serverData1[0]}}</div>
+                            <div>{{serverData1[0]}}</div>
+                            <div>{{serverData1[0]}}</div>
+                            <div>{{serverData1[0]}}</div>
+                            <div>{{serverData1[0]}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </body>
 </html>
