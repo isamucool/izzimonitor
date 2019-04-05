@@ -2,7 +2,7 @@
 from nltk.tokenize import WhitespaceTokenizer
 import linecache
 
-server1 = WhitespaceTokenizer().tokenize(linecache.getline('LogConsultasSrvr.txt',109))
+server1 = WhitespaceTokenizer().tokenize(linecache.getline('LogConsultasSrvr.txt',117))
 server2 = WhitespaceTokenizer().tokenize(linecache.getline('LogConsultasSrvr.txt',28))
 server3 = WhitespaceTokenizer().tokenize(linecache.getline('LogConsultasSrvr.txt',29))
 

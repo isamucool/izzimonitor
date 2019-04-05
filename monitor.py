@@ -22,7 +22,10 @@ def monitor():
     
     
     #lectura de status de Tareas Activas
-    taskData1 = WhitespaceTokenizer().tokenize(linecache.getline('LogConsultasSrvr.txt',109))
+    taskData1 = WhitespaceTokenizer().tokenize(linecache.getline('LogConsultasSrvr.txt',101))
+    taskData2 = WhitespaceTokenizer().tokenize(linecache.getline('LogConsultasSrvr.txt',109))
+    taskData3 = WhitespaceTokenizer().tokenize(linecache.getline('LogConsultasSrvr.txt',117))
+    taskData4 = WhitespaceTokenizer().tokenize(linecache.getline('LogConsultasSrvr.txt',125))
    
 
     #creacion de grafico para medidor para componente 1
@@ -66,7 +69,10 @@ def monitor():
                             graph_data=graph_data,
                             # graph2_data=graph2_data,
                             # graph3_data=graph3_data,
-                            taskData1=taskData1)
+                            taskData1=taskData1,
+                            taskData2=taskData2,
+                            taskData3=taskData3,
+                            taskData4=taskData4)
 
 
 

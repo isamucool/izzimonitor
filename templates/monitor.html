@@ -5,7 +5,6 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <meta http-equiv="refresh" content="60">
         <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
         <title>Monitoreo Siebel izzi</title>
     </head>
@@ -93,7 +92,7 @@
                         <h2>Sesiones Maximas</h2>
                     </div>
                     <div>
-                        <embed src="{{graph_data|safe}}" type="image/svg+xml" style="max-width: 600px;">
+                        <embed src="{{graph_data|safe}}" type="image/svg+xml" id="graphic">
                     </div>
                 </div>
             </div>
@@ -115,40 +114,40 @@
                             <div>Operacion</div>
                         </div>
                         <div class="tableRow">
-                            <div>{{serverData1[0]}}</div>
-                            <div>{{serverData1[0]}}</div>
-                            <div>{{serverData1[0]}}</div>
-                            <div>{{serverData1[0]}}</div>
-                            <div>{{serverData1[0]}}</div>
-                            <div>{{serverData1[0]}}</div>
-                            <div>{{serverData1[0]}}</div>
+                            <div>{{taskData1[0]}}</div>
+                            <div>{{taskData1[1]}}</div>
+                            <div>{{taskData1[2]}}</div>
+                            <div>{{taskData1[3]}}</div>
+                            <div>{{taskData1[4]}}</div>
+                            <div>{{taskData1[5] + ' ' + taskData1[6]}}</div>
+                            <div>{{taskData1[9] + ' ' + taskData1[10]}}</div>
                         </div>
                         <div class="tableRow">
-                            <div>{{serverData1[0]}}</div>
-                            <div>{{serverData1[0]}}</div>
-                            <div>{{serverData1[0]}}</div>
-                            <div>{{serverData1[0]}}</div>
-                            <div>{{serverData1[0]}}</div>
-                            <div>{{serverData1[0]}}</div>
-                            <div>{{serverData1[0]}}</div>
+                            <div>{{taskData2[0]}}</div>
+                            <div>{{taskData2[1]}}</div>
+                            <div>{{taskData2[2]}}</div>
+                            <div>{{taskData2[3]}}</div>
+                            <div>{{taskData2[4]}}</div>
+                            <div>{{taskData2[5] + ' ' +  taskData2[6]}}</div>
+                            <div>{{taskData2[9] + ' ' +  taskData2[10]}}</div>
                         </div>
                        <div class="tableRow">
-                            <div>{{serverData1[0]}}</div>
-                            <div>{{serverData1[0]}}</div>
-                            <div>{{serverData1[0]}}</div>
-                            <div>{{serverData1[0]}}</div>
-                            <div>{{serverData1[0]}}</div>
-                            <div>{{serverData1[0]}}</div>
-                            <div>{{serverData1[0]}}</div>
+                            <div>{{taskData3[0]}}</div>
+                            <div>{{taskData3[1]}}</div>
+                            <div>{{taskData3[5]}}</div>
+                            <div>{{taskData3[6]}}</div>
+                            <div>{{taskData3[7]}}</div>
+                            <div>{{taskData3[8] + ' ' +  taskData3[9]}}</div>
+                            <div>{{taskData3[12] + ' ' +  taskData3[13]}}</div>
                         </div>
                         <div class="tableRow">
-                            <div>{{serverData1[0]}}</div>
-                            <div>{{serverData1[0]}}</div>
-                            <div>{{serverData1[0]}}</div>
-                            <div>{{serverData1[0]}}</div>
-                            <div>{{serverData1[0]}}</div>
-                            <div>{{serverData1[0]}}</div>
-                            <div>{{serverData1[0]}}</div>
+                            <div>{{taskData4[0]}}</div>
+                            <div>{{taskData4[1]}}</div>
+                            <div>{{taskData4[2]}}</div>
+                            <div>{{taskData4[3]}}</div>
+                            <div>{{taskData4[4]}}</div>
+                            <div>{{taskData4[5] + ' ' +  taskData4[6]}}</div>
+                            <div>{{taskData4[9] + ' ' +  taskData4[10]}}</div>
                         </div>
                     </div>
                 </div>

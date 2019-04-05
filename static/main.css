@@ -37,11 +37,6 @@ body {
    
 }
 
-#wrapper {
-    display: inline-flex;
-    text-align: center;
-    width: 100%;
-}
 
 #monitorLeft{
     flex-grow: 1;
@@ -63,9 +58,9 @@ body {
 }
 
 .tableHeaders div {
-    #border: 2px solid black ;
+    /* border: 2px solid black ; */
     font-weight: bold;
-    #flex-grow: 1;
+    /* flex-grow: 1; */
     flex-basis: 20%;
     
 }
@@ -83,4 +78,24 @@ body {
      border: .5px solid black ;
     
 }
+
+
+#graphic{
+    align-content: center;
+    max-width: 800px;
+}
+
+
+/* MediaQeurys para pantallas de mas de 1300 px de ancho */
+@media (min-width: 1300px){
+    #wrapper {
+        display: inline-flex;
+        text-align: center;
+        width: 100%;
+    }
+    
+}
+
+
+
 
