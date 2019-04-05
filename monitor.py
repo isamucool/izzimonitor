@@ -26,28 +26,34 @@ def monitor():
    
 
     #creacion de grafico para medidor para componente 1
+    
     graph = pygal.SolidGauge(
-    half_pie=True, inner_radius=0.70,
+    half_pie=True, inner_radius=0.50,
     style=pygal.style.styles['default'](value_font_size=10))
 
-    percent_formatter = lambda x: '{:.10g}%'.format(x)
-    graph.value_formatter = percent_formatter
-    graph.add('Series 1', [{'value': int(componentData1[8]), 'max_value': int(componentData1[9])}])
+    #percent_formatter = lambda x: '{:.10g}%'.format(x)
+    user_formatter = lambda x: '{:1g}'.format(x)
+    #graph.show_legend = False
+    graph.human_readable=True
+    graph.value_formatter = user_formatter
+    graph.add(componentData1[0], [{'value': int(componentData1[8]), 'max_value': int(componentData1[9])}])
+    graph.add(componentData2[0], [{'value': int(componentData2[8]), 'max_value': int(componentData2[9])}])
+    graph.add(componentData3[0], [{'value': int(componentData3[8]), 'max_value': int(componentData3[9])}])
     graph_data = graph.render_data_uri()
 
     #creacion de grafico para medidor para componente 2
-    graph2 = pygal.SolidGauge(
-    half_pie=True, inner_radius=0.70,
-    style=pygal.style.styles['default'](value_font_size=10))
-    graph2.add('Series 2', [{'value': int(componentData2[8]), 'max_value': int(componentData2[9])}])
-    graph2_data = graph2.render_data_uri()
+    # graph2 = pygal.SolidGauge(
+    # half_pie=True, inner_radius=0.70,
+    # style=pygal.style.styles['default'](value_font_size=10))
+    # graph2.add('Series 2', [{'value': int(componentData2[8]), 'max_value': int(componentData2[9])}])
+    # graph2_data = graph2.render_data_uri()
 
     #creacion de grafico para medidor para componente 3
-    graph3 = pygal.SolidGauge(
-    half_pie=True, inner_radius=0.70,
-    style=pygal.style.styles['default'](value_font_size=10))
-    graph3.add('Series 3', [{'value': int(componentData3[8]), 'max_value': int(componentData3[9])}])
-    graph3_data = graph3.render_data_uri()
+    # graph3 = pygal.SolidGauge(
+    # half_pie=True, inner_radius=0.70,
+    # style=pygal.style.styles['default'](value_font_size=10))
+    # graph3.add('Series 3', [{'value': int(componentData3[8]), 'max_value': int(componentData3[9])}])
+    # graph3_data = graph3.render_data_uri()
 
 
     return render_template("monitor.html", 
@@ -58,8 +64,8 @@ def monitor():
                             componentData2=componentData2,
                             componentData3=componentData3,
                             graph_data=graph_data,
-                            graph2_data=graph2_data,
-                            graph3_data=graph3_data,
+                            # graph2_data=graph2_data,
+                            # graph3_data=graph3_data,
                             taskData1=taskData1)
 
 

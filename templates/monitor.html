@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <!---------------------Division de Pantalla Lado Izquierdo------------------------------->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -9,7 +10,7 @@
         <title>Monitoreo Siebel izzi</title>
     </head>
     <body>
-        <!--Contenedor del encabezado-->
+        <!-------------------------Contenedor del encabezado------------------------>
         <div id="header">
                 <div id="logo">
                     <img src="{{ url_for('static', filename='izzi-dark.svg')}}" alt="izzi logo dark">
@@ -17,9 +18,12 @@
                 <div id="headTitle">
                     <h1>Monitoreo Siebel izzi</h1>
                 </div>
+                <div id="blank"></div>
         </div>
         <div id=wrapper>
+            <!---------------------Division de Pantalla Lado Izquierdo------------------------------->
             <div id="monitorLeft" >
+                <!---------------------Seccion de Monitoreo Servidores------------------------------->
                 <div id="servers">
                     <div class="tableTitle">
                         <h2>Servidores</h2>
@@ -51,6 +55,7 @@
                         </div>                    
                     </div>
                 </div>
+                <!---------------------Seccion de Monitoreo de Componentes--------------------------->
                 <div id="components">
                     <div class="tableTitle">
                         <h2>Componentes</h2>
@@ -60,44 +65,41 @@
                             <div>Servidor</div>
                             <div>Componente</div>
                             <div>Estatus</div>
-                            <div>Task ID</div>
+                            <div>Current Tasks</div>
                         </div>
                         <div class="tableRow">
                             <div>{{componentData1[0]}}</div>
                             <div>{{componentData1[1]}}</div>
                             <div>{{componentData1[6]}}</div>
-                            <div>{{componentData1[0]}}</div>
+                            <div>{{componentData1[9]}}</div>
                         </div>
                         <div class="tableRow">
-                            <div>{{serverData1[0]}}</div>
-                            <div>{{serverData1[0]}}</div>
-                            <div>{{serverData1[0]}}</div>
-                            <div>{{serverData1[0]}}</div>
+                            <div>{{componentData2[0]}}</div>
+                            <div>{{componentData2[1]}}</div>
+                            <div>{{componentData2[6]}}</div>
+                            <div>{{componentData2[9]}}</div>
                         </div>
                        <div class="tableRow">
-                            <div>{{serverData1[0]}}</div>
-                            <div>{{serverData1[0]}}</div>
-                            <div>{{serverData1[0]}}</div>
-                            <div>{{serverData1[0]}}</div>
-                        </div>
-                        <div class="tableRow">
-                            <div>{{serverData1[0]}}</div>
-                            <div>{{serverData1[0]}}</div>
-                            <div>{{serverData1[0]}}</div>
-                            <div>{{serverData1[0]}}</div>
-                        </div>
+                            <div>{{componentData3[0]}}</div>
+                            <div>{{componentData3[1]}}</div>
+                            <div>{{componentData3[6]}}</div>
+                            <div>{{componentData3[9]}}</div>
+                        </div>                    
                     </div>
                 </div>
+                <!---------------------Seccion de Monitoreo de Graficas------------------------------>
                 <div id="gauge">
                     <div class="tableTitle">
                         <h2>Sesiones Maximas</h2>
                     </div>
                     <div>
-                        <embed src="{{graph2_data|safe}}" type="image/svg+xml" style="max-width: 400px;">
+                        <embed src="{{graph_data|safe}}" type="image/svg+xml" style="max-width: 600px;">
                     </div>
                 </div>
             </div>
+            <!---------------------Division de Pantalla Lado Derecho------------------------------->
             <div id="monitorRight">
+                <!---------------------Division de Pantalla Lado Derecho------------------------------->
                  <div id="Tasks">
                     <div class="tableTitle">
                         <h2>Tareas</h2>
