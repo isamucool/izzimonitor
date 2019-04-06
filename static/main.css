@@ -42,12 +42,12 @@ body {
 
 
 #monitorLeft{
-    flex-grow: 1;
+    flex-grow: 4;
     margin: 0px 5px;
 }
 
 #monitorRight{
-    flex-grow: 3;
+    flex-grow: 7;
     margin: 0px 5px;
 }
 .tableTitle{
@@ -96,8 +96,14 @@ body {
 
 .error {
     color: red;
+    animation: blinkRed 0.5s infinite;
 }
 
+@-webkit-keyframes blinkRed {
+    from { color: #F00; }
+    50% { color: black; }
+    to { color: #F00; }
+}
 
 #graphic{
     align-content: center;

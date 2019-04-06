@@ -37,13 +37,25 @@
                         </div>
                         <div class="tableRow">
                             <div>{{serverData1[0]}}</div>
-                            <div>{{serverData1[2]}}  <i class="fas fa-circle run"></i></div>
+                            {% if serverData1[2] == 'Ejecutando' %}
+                                <div>{{serverData1[2]}}  <i class="fas fa-circle run"></i></div>
+                                {% elif serverData1[2] == 'Activado' %}
+                                    <div>{{serverData1[2]}}  <i class="fas fa-circle ok"></i></div>
+                                    {% else %}
+                                        <div>{{serverData1[2]}}  <i class="fas fa-circle error"></i></div>
+                            {% endif %}                                
                             <div>{{serverData1[1]}}</div>
                             <div>{{serverData1[3]}}</div>
                         </div>
                         <div class="tableRow">
                             <div>{{serverData2[0]}}</div>
-                            <div>{{serverData2[2]}}  <i class="fas fa-circle ok"></i></div>
+                            {% if serverData2[2] == 'Ejecutando' %}
+                                <div>{{serverData2[2]}}  <i class="fas fa-circle run"></i></div>
+                                    {% elif serverData2[2] == 'Activado' %}
+                                    <div>{{serverData2[2]}}  <i class="fas fa-circle ok"></i></div>
+                                    {% else %}
+                                        <div>{{serverData2[2]}}  <i class="fas fa-circle error"></i></div>
+                            {% endif %}                                
                             <div>{{serverData2[1]}}</div>
                             <div>{{serverData2[3]}}</div>
                         </div>
