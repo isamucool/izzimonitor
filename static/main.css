@@ -105,14 +105,20 @@ body {
     to { color: #F00; }
 }
 
+
+
 #graphic{
     align-content: center;
-    max-width: 800px;
 }
 
+#graphTile {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
 
 /* MediaQeurys para pantallas de mas de 1300 px de ancho */
-@media (min-width: 1300px){
+@media (min-width: 1000px){
     #wrapper {
         display: inline-flex;
         text-align: center;
