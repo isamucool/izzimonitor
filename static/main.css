@@ -107,15 +107,11 @@ body {
 
 
 
-#graphic{
-    align-content: center;
+.graphic{
+    
 }
 
-#graphTile {
-    display: flex;
-    align-items: flex-start;
-    flex-wrap: wrap;
-}
+
 
 /* MediaQeurys para pantallas de mas de 1300 px de ancho */
 @media (min-width: 1000px){

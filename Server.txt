@@ -1,0 +1,6 @@
+@echo off
+::Moviendo a la ruta server manager
+E:
+cd \sba81\siebsrvr\BIN
+srvrmgr.exe -e MIG_81 -g 172.21.40.86 -u SADMIN -p Nja01011100 -i E:\Scr\ConsultasSrvr.txt -o E:\Scr\LogConsultasSrvr.txt
+exit

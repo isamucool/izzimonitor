@@ -1,0 +1,101 @@
+﻿Siebel Enterprise Applications Siebel Server Manager, Version 8.1.1.6 [21233] LANG_INDEPENDENT 
+Copyright (c) 1990-2008, Oracle. All rights reserved.
+
+The Programs (which include both the software and documentation) contain
+proprietary information; they are provided under a license agreement containing
+restrictions on use and disclosure and are also protected by copyright, patent,
+and other intellectual and industrial property laws. Reverse engineering,
+disassembly, or decompilation of the Programs, except to the extent required to
+obtain interoperability with other independently created software or as specified
+by law, is prohibited.
+
+Oracle, JD Edwards, PeopleSoft, and Siebel are registered trademarks of
+Oracle Corporation and/or its affiliates. Other names may be trademarks
+of their respective owners.
+
+If you have received this software in error, please notify Oracle Corporation
+immediately at 1.800.ORACLE1.
+
+Type "help" for list of commands, "help <topic>" for detailed help
+
+Connected to 3 server(s) out of a total of 3 server(s) in the enterprise
+
+srvrmgr> list server show SBLSRVR_NAME,SBLMGR_PID,SV_DISP_STATE,START_TIME
+
+SBLSRVR_NAME  SBLMGR_PID  SV_DISP_STATE  START_TIME           
+------------  ----------  -------------  -------------------  
+CVSOUIMA      9700        Ejecutando     2019-04-08 19:25:54  
+CVSOUIMC      14808       Ejecutando     2019-04-08 19:29:16  
+CVSOUIMB      3176        Ejecutando     2019-04-08 19:27:37  
+
+3 rows returned.
+
+srvrmgr> 
+
+srvrmgr> list comp eCommunicationsObjMgr_adsi show SV_NAME,CC_ALIAS,CP_DISP_RUN_STATE, CP_NUM_RUN_TASKS, CP_MAX_TASKS
+
+SV_NAME   CC_ALIAS                    CP_DISP_RUN_STATE  CP_NUM_RUN_TASKS  CP_MAX_TASKS  
+--------  --------------------------  -----------------  ----------------  ------------  
+CVSOUIMA  eCommunicationsObjMgr_adsi  Activado           0                 40            
+CVSOUIMB  eCommunicationsObjMgr_adsi  Activado           0                 40            
+CVSOUIMC  eCommunicationsObjMgr_adsi  Activado           0                 40            
+
+3 rows returned.
+
+srvrmgr> list comp EAIObjMgr_esn show SV_NAME,CC_ALIAS,CP_DISP_RUN_STATE, CP_NUM_RUN_TASKS, CP_MAX_TASKS
+
+SV_NAME   CC_ALIAS       CP_DISP_RUN_STATE  CP_NUM_RUN_TASKS  CP_MAX_TASKS  
+--------  -------------  -----------------  ----------------  ------------  
+CVSOUIMB  EAIObjMgr_esn  Ejecutando         3                 20            
+CVSOUIMC  EAIObjMgr_esn  Ejecutando         1                 20            
+CVSOUIMA  EAIObjMgr_esn  Ejecutando         2                 20            
+
+3 rows returned.
+
+srvrmgr> list comp AsgnSrvr show SV_NAME,CC_ALIAS,CP_DISP_RUN_STATE, CP_NUM_RUN_TASKS, CP_MAX_TASKS
+
+SV_NAME   CC_ALIAS  CP_DISP_RUN_STATE  CP_NUM_RUN_TASKS  CP_MAX_TASKS  
+--------  --------  -----------------  ----------------  ------------  
+CVSOUIMA  AsgnSrvr  Activado           0                 20            
+CVSOUIMC  AsgnSrvr  Activado           0                 20            
+CVSOUIMB  AsgnSrvr  Apagar sistema     0                 20            
+
+3 rows returned.
+
+srvrmgr> list comp AsgnBatch show SV_NAME,CC_ALIAS,CP_DISP_RUN_STATE, CP_NUM_RUN_TASKS, CP_MAX_TASKS
+
+SV_NAME   CC_ALIAS   CP_DISP_RUN_STATE  CP_NUM_RUN_TASKS  CP_MAX_TASKS  
+--------  ---------  -----------------  ----------------  ------------  
+CVSOUIMA  AsgnBatch  Activado           0                 20            
+CVSOUIMC  AsgnBatch  Apagar sistema     0                 20            
+CVSOUIMB  AsgnBatch  Apagar sistema     0                 20            
+
+3 rows returned.
+
+srvrmgr> 
+
+srvrmgr> list tasks for comp AsgnSrvr show SV_NAME, CC_ALIAS, TK_TASKID, TK_PID, TK_DISP_RUNSTATE
+
+SV_NAME  CC_ALIAS  TK_TASKID  TK_PID  TK_DISP_RUNSTATE  
+-------  --------  ---------  ------  ----------------  
+CVSOUIMA  AsgnSrvr  34603048   3612    Finalizado        
+CVSOUIMA  AsgnSrvr  34603047   3612    Finalizado        
+CVSOUIMA  AsgnSrvr  34603046   3612    Finalizado        
+CVSOUIMA  AsgnSrvr  34603045   3612    Finalizado        
+CVSOUIMA  AsgnSrvr  34603044   3612    Finalizado        
+CVSOUIMA  AsgnSrvr  34603043   3612    Finalizado        
+CVSOUIMA  AsgnSrvr  34603042   3612    Finalizado        
+CVSOUIMA  AsgnSrvr  34603041   3612    Finalizado        
+CVSOUIMA  AsgnSrvr  34603040   3612    Finalizado        
+CVSOUIMA  AsgnSrvr  34603039   3612    Finalizado        
+CVSOUIMA  AsgnSrvr  34603038   3612    Finalizado        
+CVSOUIMA  AsgnSrvr  34603037   3612    Finalizado        
+CVSOUIMA  AsgnSrvr  34603036   3612    Finalizado        
+
+13 rows returned.
+
+srvrmgr> 
+
+srvrmgr> 
+
+srvrmgr> 
