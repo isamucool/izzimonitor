@@ -8,25 +8,43 @@ app = Flask(__name__, template_folder="templates", static_folder="static")
 
 
 def monitor():
-    
+    fileToRead = 'LogConsultasSrvr2.txt'
     #lectura del archivo por lineas
     #lectura de status de servidores
-    serverData1 = WhitespaceTokenizer().tokenize(linecache.getline('LogConsultasSrvr.txt',27))
-    serverData2 = WhitespaceTokenizer().tokenize(linecache.getline('LogConsultasSrvr.txt',28))
-    serverData3 = WhitespaceTokenizer().tokenize(linecache.getline('LogConsultasSrvr.txt',29))
+    serverData1 = WhitespaceTokenizer().tokenize(linecache.getline(fileToRead,27))
+    serverData2 = WhitespaceTokenizer().tokenize(linecache.getline(fileToRead,28))
+    serverData3 = WhitespaceTokenizer().tokenize(linecache.getline(fileToRead,29))
 
     #lectura de status de Componentes
-    componentData1 = WhitespaceTokenizer().tokenize(linecache.getline('LogConsultasSrvr.txt',47))
-    componentData2 = WhitespaceTokenizer().tokenize(linecache.getline('LogConsultasSrvr.txt',48))
-    componentData3 = WhitespaceTokenizer().tokenize(linecache.getline('LogConsultasSrvr.txt',49))
+    componentData1 = WhitespaceTokenizer().tokenize(linecache.getline(fileToRead,39))
+    componentData2 = WhitespaceTokenizer().tokenize(linecache.getline(fileToRead,40))
+    componentData3 = WhitespaceTokenizer().tokenize(linecache.getline(fileToRead,41))
+    componentData4 = WhitespaceTokenizer().tokenize(linecache.getline(fileToRead,49))
+    componentData5 = WhitespaceTokenizer().tokenize(linecache.getline(fileToRead,50))
+    componentData6 = WhitespaceTokenizer().tokenize(linecache.getline(fileToRead,51))
+    componentData7 = WhitespaceTokenizer().tokenize(linecache.getline(fileToRead,59))
+    componentData8 = WhitespaceTokenizer().tokenize(linecache.getline(fileToRead,60))
+    componentData9 = WhitespaceTokenizer().tokenize(linecache.getline(fileToRead,61))
+    componentData7 = WhitespaceTokenizer().tokenize(linecache.getline(fileToRead,69))
+    componentData8 = WhitespaceTokenizer().tokenize(linecache.getline(fileToRead,70))
+    componentData9 = WhitespaceTokenizer().tokenize(linecache.getline(fileToRead,71))
     
     
     #lectura de status de Tareas Activas
-    taskData1 = WhitespaceTokenizer().tokenize(linecache.getline('LogConsultasSrvr.txt',101))
-    taskData2 = WhitespaceTokenizer().tokenize(linecache.getline('LogConsultasSrvr.txt',109))
-    taskData3 = WhitespaceTokenizer().tokenize(linecache.getline('LogConsultasSrvr.txt',117))
-    taskData4 = WhitespaceTokenizer().tokenize(linecache.getline('LogConsultasSrvr.txt',125))
-   
+    taskData1 = WhitespaceTokenizer().tokenize(linecache.getline(fileToRead,81))
+    taskData2 = WhitespaceTokenizer().tokenize(linecache.getline(fileToRead,82))
+    taskData3 = WhitespaceTokenizer().tokenize(linecache.getline(fileToRead,83))
+    taskData4 = WhitespaceTokenizer().tokenize(linecache.getline(fileToRead,84))
+    taskData5 = WhitespaceTokenizer().tokenize(linecache.getline(fileToRead,85))
+    taskData6 = WhitespaceTokenizer().tokenize(linecache.getline(fileToRead,86))
+    taskData7 = WhitespaceTokenizer().tokenize(linecache.getline(fileToRead,87))
+    taskData8 = WhitespaceTokenizer().tokenize(linecache.getline(fileToRead,88))
+    taskData9 = WhitespaceTokenizer().tokenize(linecache.getline(fileToRead,89))
+    taskData10 = WhitespaceTokenizer().tokenize(linecache.getline(fileToRead,90))
+    taskData11 = WhitespaceTokenizer().tokenize(linecache.getline(fileToRead,91))
+    taskData12 = WhitespaceTokenizer().tokenize(linecache.getline(fileToRead,92))
+    taskData13 = WhitespaceTokenizer().tokenize(linecache.getline(fileToRead,93))
+    
 
     #creacion de grafico para medidor para componente 1
     
@@ -39,9 +57,15 @@ def monitor():
     #graph.show_legend = False
     graph.human_readable=True
     graph.value_formatter = user_formatter
-    graph.add(componentData1[0], [{'value': int(componentData1[8]), 'max_value': int(componentData1[9])}])
-    graph.add(componentData2[0], [{'value': int(componentData2[8]), 'max_value': int(componentData2[9])}])
-    graph.add(componentData3[0], [{'value': int(componentData3[8]), 'max_value': int(componentData3[9])}])
+    graph.add(componentData1[0] + '_' + componentData1[1], [{'value': int(componentData1[3]), 'max_value': int(componentData1[4])}])
+    graph.add(componentData2[0] + '_' + componentData2[1], [{'value': int(componentData2[3]), 'max_value': int(componentData2[4])}])
+    graph.add(componentData3[0] + '_' + componentData3[1], [{'value': int(componentData3[3]), 'max_value': int(componentData3[4])}])
+    graph.add(componentData4[0] + '_' + componentData4[1], [{'value': int(componentData3[3]), 'max_value': int(componentData3[4])}])
+    graph.add(componentData5[0] + '_' + componentData5[1], [{'value': int(componentData3[3]), 'max_value': int(componentData3[4])}])
+    graph.add(componentData6[0] + '_' + componentData6[1], [{'value': int(componentData3[3]), 'max_value': int(componentData3[4])}])
+    graph.add(componentData7[0] + '_' + componentData7[1], [{'value': int(componentData3[3]), 'max_value': int(componentData3[4])}])
+    graph.add(componentData8[0] + '_' + componentData8[1], [{'value': int(componentData3[3]), 'max_value': int(componentData3[4])}])
+    graph.add(componentData9[0] + '_' + componentData9[1], [{'value': int(componentData3[3]), 'max_value': int(componentData3[4])}])
     graph_data = graph.render_data_uri()
 
     #creacion de grafico para medidor para componente 2
@@ -66,15 +90,28 @@ def monitor():
                             componentData1=componentData1,
                             componentData2=componentData2,
                             componentData3=componentData3,
+                            componentData4=componentData4,
+                            componentData5=componentData5,
+                            componentData6=componentData6,
+                            componentData7=componentData7,
+                            componentData8=componentData8,
+                            componentData9=componentData9,
                             graph_data=graph_data,
                             # graph2_data=graph2_data,
                             # graph3_data=graph3_data,
                             taskData1=taskData1,
                             taskData2=taskData2,
                             taskData3=taskData3,
-                            taskData4=taskData4)
-
-
+                            taskData4=taskData4,
+                            taskData5=taskData5,
+                            taskData6=taskData6,
+                            taskData7=taskData7,
+                            taskData8=taskData8,
+                            taskData9=taskData9,
+                            taskData10=taskData10,
+                            taskData11=taskData11,
+                            taskData12=taskData12,
+                            taskData13=taskData13)
 
 if __name__ == '__main__':
     app.run(debug = True, port=7777)
