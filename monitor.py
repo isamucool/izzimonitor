@@ -97,8 +97,6 @@ def monitor():
                             componentData8=componentData8,
                             componentData9=componentData9,
                             graph_data=graph_data,
-                            # graph2_data=graph2_data,
-                            # graph3_data=graph3_data,
                             taskData1=taskData1,
                             taskData2=taskData2,
                             taskData3=taskData3,

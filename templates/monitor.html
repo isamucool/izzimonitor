@@ -98,8 +98,13 @@
                                     <div>{{componentData1[2]}}  <i class="fas fa-circle ok"></i></div>
                                     {% else %}
                                         <div>{{componentData1[2]}}  <i class="fas fa-circle error"></i></div>
-                            {% endif %}   
-                            <div>{{componentData1[3]}}</div>
+                            {% endif %} 
+                            {% if componentData1[3]|int < componentData1[4]|int * 0.50 %}  
+                            <div>{{componentData1[3]}}  <i class="fas fa-circle run"></i></div>
+                                {% elif componentData1[3]|int > componentData1[4]|int * 0.50 %}
+                                <div>{{componentData1[3]}}  <i class="fas fa-circle error"></i></div>
+
+                            {% endif %} 
                         </div>
                         <!----------------------- Data ----------------------------------------------->
                         <!----------------------- Data ----------------------------------------------->
@@ -214,33 +219,6 @@
                             <div>{{componentData9[3]}}</div>
                         </div>
                         <!----------------------- Data ----------------------------------------------->
-                        
-                        <!-- <div class="tableRow">
-                            <div>{{componentData2[0]}}</div>
-                            <div>{{componentData2[1]}}</div>
-                            {% if componentData2[6] == 'Ejecutando' %}
-                                <div>{{componentData2[6]}}  <i class="fas fa-circle run"></i></div>
-                                    {% elif componentData2[6] == 'Activado' %}
-                                    <div>{{componentData2[6]}}  <i class="fas fa-circle ok"></i></div>
-                                    {% else %}
-                                        <div>{{componentData2[6]}}  <i class="fas fa-circle error"></i></div>
-                            {% endif %} 
-                            <div>{{componentData2[9]}}</div>
-                        </div>
-                       <div class="tableRow">
-                            <div>{{componentData3[0]}}</div>
-                            <div>{{componentData3[1]}}</div>
-                            {% if componentData3[6] == 'Ejecutando' %}
-                                <div>{{componentData3[6]}}  <i class="fas fa-circle run"></i></div>
-                                    {% elif componentData3[6] == 'Activado' %}
-                                    <div>{{componentData3[6]}}  <i class="fas fa-circle ok"></i></div>
-                                    {% else %}
-                                        <div>{{componentData3[6]}}  <i class="fas fa-circle error"></i></div>
-                            {% endif %} 
-                            <div>{{componentData3[9]}}</div>
-                        </div>                    
-                    </div>
-                </div> -->
                 <!---------------------Seccion de Monitoreo de Graficas------------------------------>
                 <div id="gauge">
                     <div class="tableTitle">
@@ -275,192 +253,166 @@
                             <div>{{taskData1[1]}}</div>
                             <div>{{taskData1[2]}}</div>
                             <div>{{taskData1[3]}}</div>
-                            {% if taskData1[4] == 'Ejecutando' %}
+                            {% if taskData1[4] == 'Finalizado' %}
                                 <div>{{taskData1[4]}}  <i class="fas fa-circle run"></i></div>
-                                    {% elif taskData1[4] == 'Activado' %}
-                                    <div>{{taskData1[4]}}  <i class="fas fa-circle ok"></i></div>
-                                    {% else %}
-                                        <div>{{taskData1[4]}}  <i class="fas fa-circle error"></i></div>
+                                {% else %}
+                                    <div>{{taskData1[4]}}  <i class="fas fa-circle error"></i></div>
                             {% endif %} 
                         </div>
                         <!----------------------- Data ----------------------------------------------->
                         <!----------------------- Data ----------------------------------------------->
                         <div class="tableRow">
-                            <div>{{taskData1[0]}}</div>
-                            <div>{{taskData1[1]}}</div>
-                            <div>{{taskData1[2]}}</div>
-                            <div>{{taskData1[3]}}</div>
-                            {% if taskData1[4] == 'Ejecutando' %}
-                                <div>{{taskData1[4]}}  <i class="fas fa-circle run"></i></div>
-                                    {% elif taskData1[4] == 'Activado' %}
-                                    <div>{{taskData1[4]}}  <i class="fas fa-circle ok"></i></div>
-                                    {% else %}
-                                        <div>{{taskData1[4]}}  <i class="fas fa-circle error"></i></div>
+                            <div>{{taskData2[0]}}</div>
+                            <div>{{taskData2[1]}}</div>
+                            <div>{{taskData2[2]}}</div>
+                            <div>{{taskData2[3]}}</div>
+                            {% if taskData2[4] == 'Finalizado' %}
+                                <div>{{taskData2[4]}}  <i class="fas fa-circle run"></i></div>
+                                {% else %}
+                                    <div>{{taskData2[4]}}  <i class="fas fa-circle error"></i></div>
                             {% endif %} 
                         </div>
                         <!----------------------- Data ----------------------------------------------->
                         <!----------------------- Data ----------------------------------------------->
                         <div class="tableRow">
-                            <div>{{taskData1[0]}}</div>
-                            <div>{{taskData1[1]}}</div>
-                            <div>{{taskData1[2]}}</div>
-                            <div>{{taskData1[3]}}</div>
-                            {% if taskData1[4] == 'Ejecutando' %}
-                                <div>{{taskData1[4]}}  <i class="fas fa-circle run"></i></div>
-                                    {% elif taskData1[4] == 'Activado' %}
-                                    <div>{{taskData1[4]}}  <i class="fas fa-circle ok"></i></div>
-                                    {% else %}
-                                        <div>{{taskData1[4]}}  <i class="fas fa-circle error"></i></div>
+                            <div>{{taskData3[0]}}</div>
+                            <div>{{taskData3[1]}}</div>
+                            <div>{{taskData3[2]}}</div>
+                            <div>{{taskData3[3]}}</div>
+                            {% if taskData3[4] == 'Finalizado' %}
+                                <div>{{taskData3[4]}}  <i class="fas fa-circle run"></i></div>
+                                {% else %}
+                                    <div>{{taskData3[4]}}  <i class="fas fa-circle error"></i></div>
                             {% endif %} 
                         </div>
                         <!----------------------- Data ----------------------------------------------->
                         <!----------------------- Data ----------------------------------------------->
                         <div class="tableRow">
-                            <div>{{taskData1[0]}}</div>
-                            <div>{{taskData1[1]}}</div>
-                            <div>{{taskData1[2]}}</div>
-                            <div>{{taskData1[3]}}</div>
-                            {% if taskData1[4] == 'Ejecutando' %}
-                                <div>{{taskData1[4]}}  <i class="fas fa-circle run"></i></div>
-                                    {% elif taskData1[4] == 'Activado' %}
-                                    <div>{{taskData1[4]}}  <i class="fas fa-circle ok"></i></div>
-                                    {% else %}
-                                        <div>{{taskData1[4]}}  <i class="fas fa-circle error"></i></div>
+                            <div>{{taskData4[0]}}</div>
+                            <div>{{taskData4[1]}}</div>
+                            <div>{{taskData4[2]}}</div>
+                            <div>{{taskData4[3]}}</div>
+                            {% if taskData4[4] == 'Finalizado' %}
+                                <div>{{taskData4[4]}}  <i class="fas fa-circle run"></i></div>
+                                {% else %}
+                                    <div>{{taskData4[4]}}  <i class="fas fa-circle error"></i></div>
                             {% endif %} 
                         </div>
                         <!----------------------- Data ----------------------------------------------->
                         <!----------------------- Data ----------------------------------------------->
                         <div class="tableRow">
-                            <div>{{taskData1[0]}}</div>
-                            <div>{{taskData1[1]}}</div>
-                            <div>{{taskData1[2]}}</div>
-                            <div>{{taskData1[3]}}</div>
-                            {% if taskData1[4] == 'Ejecutando' %}
-                                <div>{{taskData1[4]}}  <i class="fas fa-circle run"></i></div>
-                                    {% elif taskData1[4] == 'Activado' %}
-                                    <div>{{taskData1[4]}}  <i class="fas fa-circle ok"></i></div>
-                                    {% else %}
-                                        <div>{{taskData1[4]}}  <i class="fas fa-circle error"></i></div>
+                            <div>{{taskData5[0]}}</div>
+                            <div>{{taskData5[1]}}</div>
+                            <div>{{taskData5[2]}}</div>
+                            <div>{{taskData5[3]}}</div>
+                            {% if taskData5[4] == 'Finalizado' %}
+                                <div>{{taskData5[4]}}  <i class="fas fa-circle run"></i></div>
+                                {% else %}
+                                    <div>{{taskData5[4]}}  <i class="fas fa-circle error"></i></div>
                             {% endif %} 
                         </div>
                         <!----------------------- Data ----------------------------------------------->
                         <!----------------------- Data ----------------------------------------------->
                         <div class="tableRow">
-                            <div>{{taskData1[0]}}</div>
-                            <div>{{taskData1[1]}}</div>
-                            <div>{{taskData1[2]}}</div>
-                            <div>{{taskData1[3]}}</div>
-                            {% if taskData1[4] == 'Ejecutando' %}
-                                <div>{{taskData1[4]}}  <i class="fas fa-circle run"></i></div>
-                                    {% elif taskData1[4] == 'Activado' %}
-                                    <div>{{taskData1[4]}}  <i class="fas fa-circle ok"></i></div>
-                                    {% else %}
-                                        <div>{{taskData1[4]}}  <i class="fas fa-circle error"></i></div>
+                            <div>{{taskData6[0]}}</div>
+                            <div>{{taskData6[1]}}</div>
+                            <div>{{taskData6[2]}}</div>
+                            <div>{{taskData6[3]}}</div>
+                            {% if taskData6[4] == 'Finalizado' %}
+                                <div>{{taskData6[4]}}  <i class="fas fa-circle run"></i></div>
+                                {% else %}
+                                    <div>{{taskData6[4]}}  <i class="fas fa-circle error"></i></div>
                             {% endif %} 
                         </div>
                         <!----------------------- Data ----------------------------------------------->
                         <!----------------------- Data ----------------------------------------------->
                         <div class="tableRow">
-                            <div>{{taskData1[0]}}</div>
-                            <div>{{taskData1[1]}}</div>
-                            <div>{{taskData1[2]}}</div>
-                            <div>{{taskData1[3]}}</div>
-                            {% if taskData1[4] == 'Ejecutando' %}
-                                <div>{{taskData1[4]}}  <i class="fas fa-circle run"></i></div>
-                                    {% elif taskData1[4] == 'Activado' %}
-                                    <div>{{taskData1[4]}}  <i class="fas fa-circle ok"></i></div>
-                                    {% else %}
-                                        <div>{{taskData1[4]}}  <i class="fas fa-circle error"></i></div>
+                            <div>{{taskData7[0]}}</div>
+                            <div>{{taskData7[1]}}</div>
+                            <div>{{taskData7[2]}}</div>
+                            <div>{{taskData7[3]}}</div>
+                            {% if taskData7[4] == 'Finalizado' %}
+                                <div>{{taskData7[4]}}  <i class="fas fa-circle run"></i></div>
+                                {% else %}
+                                    <div>{{taskData7[4]}}  <i class="fas fa-circle error"></i></div>
                             {% endif %} 
                         </div>
                         <!----------------------- Data ----------------------------------------------->
                         <!----------------------- Data ----------------------------------------------->
                         <div class="tableRow">
-                            <div>{{taskData1[0]}}</div>
-                            <div>{{taskData1[1]}}</div>
-                            <div>{{taskData1[2]}}</div>
-                            <div>{{taskData1[3]}}</div>
-                            {% if taskData1[4] == 'Ejecutando' %}
-                                <div>{{taskData1[4]}}  <i class="fas fa-circle run"></i></div>
-                                    {% elif taskData1[4] == 'Activado' %}
-                                    <div>{{taskData1[4]}}  <i class="fas fa-circle ok"></i></div>
-                                    {% else %}
-                                        <div>{{taskData1[4]}}  <i class="fas fa-circle error"></i></div>
+                            <div>{{taskData8[0]}}</div>
+                            <div>{{taskData8[1]}}</div>
+                            <div>{{taskData8[2]}}</div>
+                            <div>{{taskData8[3]}}</div>
+                            {% if taskData8[4] == 'Finalizado' %}
+                                <div>{{taskData8[4]}}  <i class="fas fa-circle run"></i></div>
+                                {% else %}
+                                    <div>{{taskData8[4]}}  <i class="fas fa-circle error"></i></div>
+                            {% endif %}  
+                        </div>
+                        <!----------------------- Data ----------------------------------------------->
+                        <!----------------------- Data ----------------------------------------------->
+                        <div class="tableRow">
+                            <div>{{taskData9[0]}}</div>
+                            <div>{{taskData9[1]}}</div>
+                            <div>{{taskData9[2]}}</div>
+                            <div>{{taskData9[3]}}</div>
+                            {% if taskData9[4] == 'Finalizado' %}
+                                <div>{{taskData9[4]}}  <i class="fas fa-circle run"></i></div>
+                                {% else %}
+                                    <div>{{taskData9[4]}}  <i class="fas fa-circle error"></i></div>
+                            {% endif %}  
+                        </div>
+                        <!----------------------- Data ----------------------------------------------->
+                        <!----------------------- Data ----------------------------------------------->
+                        <div class="tableRow">
+                            <div>{{taskData10[0]}}</div>
+                            <div>{{taskData10[1]}}</div>
+                            <div>{{taskData10[2]}}</div>
+                            <div>{{taskData10[3]}}</div>
+                            {% if taskData10[4] == 'Finalizado' %}
+                                <div>{{taskData10[4]}}  <i class="fas fa-circle run"></i></div>
+                                {% else %}
+                                    <div>{{taskData10[4]}}  <i class="fas fa-circle error"></i></div>
                             {% endif %} 
                         </div>
                         <!----------------------- Data ----------------------------------------------->
                         <!----------------------- Data ----------------------------------------------->
                         <div class="tableRow">
-                            <div>{{taskData1[0]}}</div>
-                            <div>{{taskData1[1]}}</div>
-                            <div>{{taskData1[2]}}</div>
-                            <div>{{taskData1[3]}}</div>
-                            {% if taskData1[4] == 'Ejecutando' %}
-                                <div>{{taskData1[4]}}  <i class="fas fa-circle run"></i></div>
-                                    {% elif taskData1[4] == 'Activado' %}
-                                    <div>{{taskData1[4]}}  <i class="fas fa-circle ok"></i></div>
-                                    {% else %}
-                                        <div>{{taskData1[4]}}  <i class="fas fa-circle error"></i></div>
+                            <div>{{taskData11[0]}}</div>
+                            <div>{{taskData11[1]}}</div>
+                            <div>{{taskData11[2]}}</div>
+                            <div>{{taskData11[3]}}</div>
+                            {% if taskData11[4] == 'Finalizado' %}
+                                <div>{{taskData11[4]}}  <i class="fas fa-circle run"></i></div>
+                                {% else %}
+                                    <div>{{taskData11[4]}}  <i class="fas fa-circle error"></i></div>
                             {% endif %} 
                         </div>
                         <!----------------------- Data ----------------------------------------------->
                         <!----------------------- Data ----------------------------------------------->
                         <div class="tableRow">
-                            <div>{{taskData1[0]}}</div>
-                            <div>{{taskData1[1]}}</div>
-                            <div>{{taskData1[2]}}</div>
-                            <div>{{taskData1[3]}}</div>
-                            {% if taskData1[4] == 'Ejecutando' %}
-                                <div>{{taskData1[4]}}  <i class="fas fa-circle run"></i></div>
-                                    {% elif taskData1[4] == 'Activado' %}
-                                    <div>{{taskData1[4]}}  <i class="fas fa-circle ok"></i></div>
-                                    {% else %}
-                                        <div>{{taskData1[4]}}  <i class="fas fa-circle error"></i></div>
+                            <div>{{taskData12[0]}}</div>
+                            <div>{{taskData12[1]}}</div>
+                            <div>{{taskData12[2]}}</div>
+                            <div>{{taskData12[3]}}</div>
+                            {% if taskData12[4] == 'Finalizado' %}
+                                <div>{{taskData12[4]}}  <i class="fas fa-circle run"></i></div>
+                                {% else %}
+                                    <div>{{taskData12[4]}}  <i class="fas fa-circle error"></i></div>
                             {% endif %} 
                         </div>
                         <!----------------------- Data ----------------------------------------------->
                         <!----------------------- Data ----------------------------------------------->
                         <div class="tableRow">
-                            <div>{{taskData1[0]}}</div>
-                            <div>{{taskData1[1]}}</div>
-                            <div>{{taskData1[2]}}</div>
-                            <div>{{taskData1[3]}}</div>
-                            {% if taskData1[4] == 'Ejecutando' %}
-                                <div>{{taskData1[4]}}  <i class="fas fa-circle run"></i></div>
-                                    {% elif taskData1[4] == 'Activado' %}
-                                    <div>{{taskData1[4]}}  <i class="fas fa-circle ok"></i></div>
-                                    {% else %}
-                                        <div>{{taskData1[4]}}  <i class="fas fa-circle error"></i></div>
-                            {% endif %} 
-                        </div>
-                        <!----------------------- Data ----------------------------------------------->
-                        <!----------------------- Data ----------------------------------------------->
-                        <div class="tableRow">
-                            <div>{{taskData1[0]}}</div>
-                            <div>{{taskData1[1]}}</div>
-                            <div>{{taskData1[2]}}</div>
-                            <div>{{taskData1[3]}}</div>
-                            {% if taskData1[4] == 'Ejecutando' %}
-                                <div>{{taskData1[4]}}  <i class="fas fa-circle run"></i></div>
-                                    {% elif taskData1[4] == 'Activado' %}
-                                    <div>{{taskData1[4]}}  <i class="fas fa-circle ok"></i></div>
-                                    {% else %}
-                                        <div>{{taskData1[4]}}  <i class="fas fa-circle error"></i></div>
-                            {% endif %} 
-                        </div>
-                        <!----------------------- Data ----------------------------------------------->
-                        <!----------------------- Data ----------------------------------------------->
-                        <div class="tableRow">
-                            <div>{{taskData1[0]}}</div>
-                            <div>{{taskData1[1]}}</div>
-                            <div>{{taskData1[2]}}</div>
-                            <div>{{taskData1[3]}}</div>
-                            {% if taskData1[4] == 'Ejecutando' %}
-                                <div>{{taskData1[4]}}  <i class="fas fa-circle run"></i></div>
-                                    {% elif taskData1[4] == 'Activado' %}
-                                    <div>{{taskData1[4]}}  <i class="fas fa-circle ok"></i></div>
-                                    {% else %}
-                                        <div>{{taskData1[4]}}  <i class="fas fa-circle error"></i></div>
+                            <div>{{taskData13[0]}}</div>
+                            <div>{{taskData13[1]}}</div>
+                            <div>{{taskData13[2]}}</div>
+                            <div>{{taskData13[3]}}</div>
+                            {% if taskData13[4] == 'Finalizado' %}
+                                <div>{{taskData13[4]}}  <i class="fas fa-circle run"></i></div>
+                                {% else %}
+                                    <div>{{taskData13[4]}}  <i class="fas fa-circle error"></i></div>
                             {% endif %} 
                         </div>
                         <!----------------------- Data ----------------------------------------------->

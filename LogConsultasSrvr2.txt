@@ -36,9 +36,9 @@ srvrmgr> list comp eCommunicationsObjMgr_adsi show SV_NAME,CC_ALIAS,CP_DISP_RUN_
 
 SV_NAME   CC_ALIAS                    CP_DISP_RUN_STATE  CP_NUM_RUN_TASKS  CP_MAX_TASKS  
 --------  --------------------------  -----------------  ----------------  ------------  
-CVSOUIMA  eCommunicationsObjMgr_adsi  Activado           0                 40            
-CVSOUIMB  eCommunicationsObjMgr_adsi  Activado           0                 40            
-CVSOUIMC  eCommunicationsObjMgr_adsi  Activado           0                 40            
+CVSOUIMA  eCommunicationsObjMgr_adsi  Activado           32                 40            
+CVSOUIMB  eCommunicationsObjMgr_adsi  Activado           40                 40            
+CVSOUIMC  eCommunicationsObjMgr_adsi  Activado           12                 40            
 
 3 rows returned.
 
@@ -56,8 +56,8 @@ srvrmgr> list comp AsgnSrvr show SV_NAME,CC_ALIAS,CP_DISP_RUN_STATE, CP_NUM_RUN_
 
 SV_NAME   CC_ALIAS  CP_DISP_RUN_STATE  CP_NUM_RUN_TASKS  CP_MAX_TASKS  
 --------  --------  -----------------  ----------------  ------------  
-CVSOUIMA  AsgnSrvr  Activado           0                 20            
-CVSOUIMC  AsgnSrvr  Activado           0                 20            
+CVSOUIMA  AsgnSrvr  Activado           12                20            
+CVSOUIMC  AsgnSrvr  Activado           9                 20            
 CVSOUIMB  AsgnSrvr  Apagar sistema     0                 20            
 
 3 rows returned.
@@ -66,7 +66,7 @@ srvrmgr> list comp AsgnBatch show SV_NAME,CC_ALIAS,CP_DISP_RUN_STATE, CP_NUM_RUN
 
 SV_NAME   CC_ALIAS   CP_DISP_RUN_STATE  CP_NUM_RUN_TASKS  CP_MAX_TASKS  
 --------  ---------  -----------------  ----------------  ------------  
-CVSOUIMA  AsgnBatch  Activado           0                 20            
+CVSOUIMA  AsgnBatch  Activado           12                 20            
 CVSOUIMC  AsgnBatch  Apagar sistema     0                 20            
 CVSOUIMB  AsgnBatch  Apagar sistema     0                 20            
 
