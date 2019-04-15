@@ -10,7 +10,7 @@
         <title>Monitoreo Siebel izzi</title>
     </head>
     <body>
-        <!-------------------------Contenedor del encabezado------------------------>
+        <!--------------------------------Contenedor del Encabezado------------------------------------->
         <div id="header">
                 <div id="logo">
                     <img src="{{ url_for('static', filename='izzi-dark.svg')}}" alt="izzi logo dark">
@@ -20,6 +20,7 @@
                 </div>
                 <div id="blank"></div>
         </div>
+        <!------------------------------------Contenedor del Contenido---------------------------------->
         <div id=wrapper>
             <!---------------------Division de Pantalla Lado Izquierdo------------------------------->
             <div id="monitorLeft" >
@@ -38,42 +39,49 @@
                         <!----------------------- Data ----------------------------------------------->
                         <div class="tableRow">
                             <div>{{serverData1[0]}}</div>
-                            {% if serverData1[2] == 'Ejecutando' %}
-                                <div>{{serverData1[2]}}  <i class="fas fa-circle run"></i></div>
-                                {% elif serverData1[2] == 'Activado' %}
-                                    <div>{{serverData1[2]}}  <i class="fas fa-circle ok"></i></div>
-                                    {% else %}
-                                        <div>{{serverData1[2]}}  <i class="fas fa-circle error"></i></div>
-                            {% endif %}                                
+                            <div>
+                                {% if serverData1[2] == 'Ejecutando' %}
+                                    {{serverData1[2]}}  <i class="fas fa-circle run"></i>
+                                    {% elif serverData1[2] == 'Activado' %}
+                                        {{serverData1[2]}}  <i class="fas fa-circle ok"></i>
+                                        {% else %}
+                                            {{serverData1[2]}}  <i class="fas fa-circle error"></i>
+                                {% endif %}  
+                            </div>                            
                             <div>{{serverData1[1]}}</div>
                             <div>{{serverData1[3]}}</div>
                         </div>
                         <!----------------------- Data ----------------------------------------------->
                         <div class="tableRow">
                             <div>{{serverData2[0]}}</div>
-                            {% if serverData2[2] == 'Ejecutando' %}
-                                <div>{{serverData2[2]}}  <i class="fas fa-circle run"></i></div>
+                            <div>
+                                {% if serverData2[2] == 'Ejecutando' %}
+                                    {{serverData2[2]}}  <i class="fas fa-circle run"></i>
                                     {% elif serverData2[2] == 'Activado' %}
-                                    <div>{{serverData2[2]}}  <i class="fas fa-circle ok"></i></div>
-                                    {% else %}
-                                        <div>{{serverData2[2]}}  <i class="fas fa-circle error"></i></div>
-                            {% endif %}                                
+                                        {{serverData2[2]}}  <i class="fas fa-circle ok"></i>
+                                        {% else %}
+                                            {{serverData2[2]}}  <i class="fas fa-circle error"></i>
+                                {% endif %}  
+                            </div>                            
                             <div>{{serverData2[1]}}</div>
                             <div>{{serverData2[3]}}</div>
                         </div>
                         <!----------------------- Data ----------------------------------------------->
-                       <div class="tableRow">
+                        <div class="tableRow">
                             <div>{{serverData3[0]}}</div>
-                            {% if serverData2[2] == 'Ejecutando' %}
-                                <div>{{serverData2[2]}}  <i class="fas fa-circle run"></i></div>
-                                    {% elif serverData2[2] == 'Activado' %}
-                                    <div>{{serverData2[2]}}  <i class="fas fa-circle ok"></i></div>
-                                    {% else %}
-                                        <div>{{serverData2[2]}}  <i class="fas fa-circle error"></i></div>
-                            {% endif %}        
+                            <div>
+                                {% if serverData3[2] == 'Ejecutando' %}
+                                    {{serverData3[2]}}  <i class="fas fa-circle run"></i>
+                                    {% elif serverData3[2] == 'Activado' %}
+                                        {{serverData3[2]}}  <i class="fas fa-circle ok"></i>
+                                        {% else %}
+                                            {{serverData3[2]}}  <i class="fas fa-circle error"></i>
+                                {% endif %}  
+                            </div>                            
                             <div>{{serverData3[1]}}</div>
                             <div>{{serverData3[3]}}</div>
-                        </div>                    
+                        </div>
+                        <!----------------------- Data ----------------------------------------------->
                     </div>
                 </div>
                 <!---------------------Seccion de Monitoreo de Componentes--------------------------->
@@ -92,150 +100,228 @@
                         <div class="tableRow">
                             <div>{{componentData1[0]}}</div>
                             <div>{{componentData1[1]}}</div>
-                            {% if componentData1[2] == 'Ejecutando' %}
-                                <div>{{componentData1[2]}}  <i class="fas fa-circle run"></i></div>
-                                    {% elif componentData1[2] == 'Activado' %}
-                                    <div>{{componentData1[2]}}  <i class="fas fa-circle ok"></i></div>
-                                    {% else %}
-                                        <div>{{componentData1[2]}}  <i class="fas fa-circle error"></i></div>
-                            {% endif %} 
-                            {% if componentData1[3]|int < componentData1[4]|int * 0.50 %}  
-                            <div>{{componentData1[3]}}  <i class="fas fa-circle run"></i></div>
-                                {% elif componentData1[3]|int > componentData1[4]|int * 0.50 %}
-                                <div>{{componentData1[3]}}  <i class="fas fa-circle error"></i></div>
-
-                            {% endif %} 
+                            <div>
+                                {% if componentData1[2] == 'Ejecutando' %}
+                                    {{componentData1[2]}}  <i class="fas fa-circle run"></i>
+                                        {% elif componentData1[2] == 'Activado' %}
+                                            {{componentData1[2]}}  <i class="fas fa-circle ok"></i>
+                                            {% else %}
+                                                {{componentData1[2]}}  <i class="fas fa-circle error"></i>
+                                {% endif %}
+                            </div>
+                            <div>
+                                {% if componentData1[3]|int <= componentData1[4]|int * 0.50 %}  
+                                    {{componentData1[3]}}  <i class="fas fa-circle run"></i>
+                                    {% elif componentData1[3]|int < componentData1[4]|int * 0.75 %}
+                                        {{componentData1[3]}}  <i class="fas fa-circle warn"></i>
+                                        {% else %}
+                                            {{componentData1[3]}}  <i class="fas fa-circle error"></i>
+                                {% endif %}            
+                            </div> 
                         </div>
                         <!----------------------- Data ----------------------------------------------->
                         <!----------------------- Data ----------------------------------------------->
                         <div class="tableRow">
                             <div>{{componentData2[0]}}</div>
                             <div>{{componentData2[1]}}</div>
-                            {% if componentData2[2] == 'Ejecutando' %}
-                                <div>{{componentData2[2]}}  <i class="fas fa-circle run"></i></div>
-                                    {% elif componentData2[2] == 'Activado' %}
-                                    <div>{{componentData2[2]}}  <i class="fas fa-circle ok"></i></div>
-                                    {% else %}
-                                        <div>{{componentData2[2]}}  <i class="fas fa-circle error"></i></div>
-                            {% endif %}   
-                            <div>{{componentData2[3]}}</div>
+                            <div>
+                                {% if componentData2[2] == 'Ejecutando' %}
+                                    {{componentData2[2]}}  <i class="fas fa-circle run"></i>
+                                        {% elif componentData2[2] == 'Activado' %}
+                                            {{componentData2[2]}}  <i class="fas fa-circle ok"></i>
+                                            {% else %}
+                                                {{componentData2[2]}}  <i class="fas fa-circle error"></i>
+                                {% endif %}
+                            </div>
+                            <div>
+                                {% if componentData2[3]|int <= componentData2[4]|int * 0.50 %}  
+                                    {{componentData2[3]}}  <i class="fas fa-circle run"></i>
+                                    {% elif componentData2[3]|int < componentData2[4]|int * 0.75 %}
+                                        {{componentData2[3]}}  <i class="fas fa-circle warn"></i>
+                                        {% else %}
+                                            {{componentData2[3]}}  <i class="fas fa-circle error"></i>
+                                {% endif %}            
+                            </div> 
                         </div>
                         <!----------------------- Data ----------------------------------------------->
                         <!----------------------- Data ----------------------------------------------->
                         <div class="tableRow">
                             <div>{{componentData3[0]}}</div>
                             <div>{{componentData3[1]}}</div>
-                            {% if componentData3[2] == 'Ejecutando' %}
-                                <div>{{componentData3[2]}}  <i class="fas fa-circle run"></i></div>
-                                    {% elif componentData3[2] == 'Activado' %}
-                                    <div>{{componentData3[2]}}  <i class="fas fa-circle ok"></i></div>
-                                    {% else %}
-                                        <div>{{componentData3[2]}}  <i class="fas fa-circle error"></i></div>
-                            {% endif %}   
-                            <div>{{componentData3[3]}}</div>
+                            <div>
+                                {% if componentData3[2] == 'Ejecutando' %}
+                                    {{componentData3[2]}}  <i class="fas fa-circle run"></i>
+                                        {% elif componentData3[2] == 'Activado' %}
+                                            {{componentData3[2]}}  <i class="fas fa-circle ok"></i>
+                                            {% else %}
+                                                {{componentData3[2]}}  <i class="fas fa-circle error"></i>
+                                {% endif %}
+                            </div>
+                            <div>
+                                {% if componentData3[3]|int <= componentData3[4]|int * 0.50 %}  
+                                    {{componentData3[3]}}  <i class="fas fa-circle run"></i>
+                                    {% elif componentData3[3]|int < componentData3[4]|int * 0.75 %}
+                                        {{componentData3[3]}}  <i class="fas fa-circle warn"></i>
+                                        {% else %}
+                                            {{componentData3[3]}}  <i class="fas fa-circle error"></i>
+                                {% endif %}            
+                            </div>
                         </div>
                         <!----------------------- Data ----------------------------------------------->
                         <!----------------------- Data ----------------------------------------------->
                         <div class="tableRow">
                             <div>{{componentData4[0]}}</div>
                             <div>{{componentData4[1]}}</div>
-                            {% if componentData4[2] == 'Ejecutando' %}
-                                <div>{{componentData4[2]}}  <i class="fas fa-circle run"></i></div>
-                                    {% elif componentData4[2] == 'Activado' %}
-                                    <div>{{componentData4[2]}}  <i class="fas fa-circle ok"></i></div>
-                                    {% else %}
-                                        <div>{{componentData4[2]}}  <i class="fas fa-circle error"></i></div>
-                            {% endif %}   
-                            <div>{{componentData4[3]}}</div>
+                            <div>
+                                {% if componentData4[2] == 'Ejecutando' %}
+                                    {{componentData4[2]}}  <i class="fas fa-circle run"></i>
+                                        {% elif componentData4[2] == 'Activado' %}
+                                            {{componentData4[2]}}  <i class="fas fa-circle ok"></i>
+                                            {% else %}
+                                                {{componentData4[2]}}  <i class="fas fa-circle error"></i>
+                                {% endif %}
+                            </div>
+                            <div>
+                                {% if componentData4[3]|int <= componentData4[4]|int * 0.50 %}  
+                                    {{componentData4[3]}}  <i class="fas fa-circle run"></i>
+                                    {% elif componentData4[3]|int < componentData4[4]|int * 0.75 %}
+                                        {{componentData4[3]}}  <i class="fas fa-circle warn"></i>
+                                        {% else %}
+                                            {{componentData4[3]}}  <i class="fas fa-circle error"></i>
+                                {% endif %}            
+                            </div>
                         </div>
                         <!----------------------- Data ----------------------------------------------->
                         <!----------------------- Data ----------------------------------------------->
                         <div class="tableRow">
                             <div>{{componentData5[0]}}</div>
                             <div>{{componentData5[1]}}</div>
-                            {% if componentData5[2] == 'Ejecutando' %}
-                                <div>{{componentData5[2]}}  <i class="fas fa-circle run"></i></div>
-                                    {% elif componentData5[2] == 'Activado' %}
-                                    <div>{{componentData5[2]}}  <i class="fas fa-circle ok"></i></div>
-                                    {% else %}
-                                        <div>{{componentData5[2]}}  <i class="fas fa-circle error"></i></div>
-                            {% endif %}   
-                            <div>{{componentData5[3]}}</div>
+                            <div>
+                                {% if componentData5[2] == 'Ejecutando' %}
+                                    {{componentData5[2]}}  <i class="fas fa-circle run"></i>
+                                        {% elif componentData5[2] == 'Activado' %}
+                                            {{componentData5[2]}}  <i class="fas fa-circle ok"></i>
+                                            {% else %}
+                                                {{componentData5[2]}}  <i class="fas fa-circle error"></i>
+                                {% endif %}
+                            </div>
+                            <div>
+                                {% if componentData5[3]|int <= componentData5[4]|int * 0.50 %}  
+                                    {{componentData5[3]}}  <i class="fas fa-circle run"></i>
+                                    {% elif componentData5[3]|int < componentData5[4]|int * 0.75 %}
+                                        {{componentData5[3]}}  <i class="fas fa-circle warn"></i>
+                                        {% else %}
+                                            {{componentData5[3]}}  <i class="fas fa-circle error"></i>
+                                {% endif %}            
+                            </div>
                         </div>
                         <!----------------------- Data ----------------------------------------------->
                         <!----------------------- Data ----------------------------------------------->
                         <div class="tableRow">
                             <div>{{componentData6[0]}}</div>
                             <div>{{componentData6[1]}}</div>
-                            {% if componentData6[2] == 'Ejecutando' %}
-                                <div>{{componentData6[2]}}  <i class="fas fa-circle run"></i></div>
-                                    {% elif componentData6[2] == 'Activado' %}
-                                    <div>{{componentData6[2]}}  <i class="fas fa-circle ok"></i></div>
-                                    {% else %}
-                                        <div>{{componentData6[2]}}  <i class="fas fa-circle error"></i></div>
-                            {% endif %}   
-                            <div>{{componentData6[3]}}</div>
+                            <div>
+                                {% if componentData6[2] == 'Ejecutando' %}
+                                    {{componentData6[2]}}  <i class="fas fa-circle run"></i>
+                                        {% elif componentData6[2] == 'Activado' %}
+                                            {{componentData6[2]}}  <i class="fas fa-circle ok"></i>
+                                            {% else %}
+                                                {{componentData6[2]}}  <i class="fas fa-circle error"></i>
+                                {% endif %}
+                            </div>
+                            <div>
+                                {% if componentData6[3]|int <= componentData6[4]|int * 0.50 %}  
+                                    {{componentData6[3]}}  <i class="fas fa-circle run"></i>
+                                    {% elif componentData6[3]|int < componentData6[4]|int * 0.75 %}
+                                        {{componentData6[3]}}  <i class="fas fa-circle warn"></i>
+                                        {% else %}
+                                            {{componentData6[3]}}  <i class="fas fa-circle error"></i>
+                                {% endif %}            
+                            </div>
                         </div>
                         <!----------------------- Data ----------------------------------------------->
                         <!----------------------- Data ----------------------------------------------->
                         <div class="tableRow">
                             <div>{{componentData7[0]}}</div>
                             <div>{{componentData7[1]}}</div>
-                            {% if componentData7[2] == 'Ejecutando' %}
-                                <div>{{componentData7[2]}}  <i class="fas fa-circle run"></i></div>
-                                    {% elif componentData7[2] == 'Activado' %}
-                                    <div>{{componentData7[2]}}  <i class="fas fa-circle ok"></i></div>
-                                    {% else %}
-                                        <div>{{componentData7[2]}}  <i class="fas fa-circle error"></i></div>
-                            {% endif %}   
-                            <div>{{componentData7[3]}}</div>
+                            <div>
+                                {% if componentData7[2] == 'Ejecutando' %}
+                                    {{componentData7[2]}}  <i class="fas fa-circle run"></i>
+                                        {% elif componentData7[2] == 'Activado' %}
+                                            {{componentData7[2]}}  <i class="fas fa-circle ok"></i>
+                                            {% else %}
+                                                {{componentData7[2]}}  <i class="fas fa-circle error"></i>
+                                {% endif %}
+                            </div>
+                            <div>
+                                {% if componentData7[3]|int <= componentData7[4]|int * 0.50 %}  
+                                    {{componentData7[3]}}  <i class="fas fa-circle run"></i>
+                                    {% elif componentData7[3]|int < componentData7[4]|int * 0.75 %}
+                                        {{componentData7[3]}}  <i class="fas fa-circle warn"></i>
+                                        {% else %}
+                                            {{componentData7[3]}}  <i class="fas fa-circle error"></i>
+                                {% endif %}            
+                            </div>
                         </div>
                         <!----------------------- Data ----------------------------------------------->
                         <!----------------------- Data ----------------------------------------------->
                         <div class="tableRow">
                             <div>{{componentData8[0]}}</div>
                             <div>{{componentData8[1]}}</div>
-                            {% if componentData8[2] == 'Ejecutando' %}
-                                <div>{{componentData8[2]}}  <i class="fas fa-circle run"></i></div>
-                                    {% elif componentData8[2] == 'Activado' %}
-                                    <div>{{componentData8[2]}}  <i class="fas fa-circle ok"></i></div>
-                                    {% else %}
-                                        <div>{{componentData8[2]}}  <i class="fas fa-circle error"></i></div>
-                            {% endif %}   
-                            <div>{{componentData8[3]}}</div>
+                            <div>
+                                {% if componentData8[2] == 'Ejecutando' %}
+                                    {{componentData8[2]}}  <i class="fas fa-circle run"></i>
+                                        {% elif componentData8[2] == 'Activado' %}
+                                            {{componentData8[2]}}  <i class="fas fa-circle ok"></i>
+                                            {% else %}
+                                                {{componentData8[2]}}  <i class="fas fa-circle error"></i>
+                                {% endif %}
+                            </div>
+                            <div>
+                                {% if componentData8[3]|int <= componentData8[4]|int * 0.50 %}  
+                                    {{componentData8[3]}}  <i class="fas fa-circle run"></i>
+                                    {% elif componentData8[3]|int < componentData8[4]|int * 0.75 %}
+                                        {{componentData8[3]}}  <i class="fas fa-circle warn"></i>
+                                        {% else %}
+                                            {{componentData8[3]}}  <i class="fas fa-circle error"></i>
+                                {% endif %}            
+                            </div>
                         </div>
                         <!----------------------- Data ----------------------------------------------->
                         <!----------------------- Data ----------------------------------------------->
                         <div class="tableRow">
                             <div>{{componentData9[0]}}</div>
                             <div>{{componentData9[1]}}</div>
-                            {% if componentData9[2] == 'Ejecutando' %}
-                                <div>{{componentData9[2]}}  <i class="fas fa-circle run"></i></div>
-                                    {% elif componentData9[2] == 'Activado' %}
-                                    <div>{{componentData9[2]}}  <i class="fas fa-circle ok"></i></div>
-                                    {% else %}
-                                        <div>{{componentData9[2]}}  <i class="fas fa-circle error"></i></div>
-                            {% endif %}   
-                            <div>{{componentData9[3]}}</div>
+                            <div>
+                                {% if componentData9[2] == 'Ejecutando' %}
+                                    {{componentData9[2]}}  <i class="fas fa-circle run"></i>
+                                        {% elif componentData9[2] == 'Activado' %}
+                                            {{componentData9[2]}}  <i class="fas fa-circle ok"></i>
+                                            {% else %}
+                                                {{componentData9[2]}}  <i class="fas fa-circle error"></i>
+                                {% endif %}
+                            </div>
+                            <div>
+                                {% if componentData9[3]|int <= componentData9[4]|int * 0.50 %}  
+                                    {{componentData9[3]}}  <i class="fas fa-circle run"></i>
+                                    {% elif componentData9[3]|int < componentData9[4]|int * 0.75 %}
+                                        {{componentData9[3]}}  <i class="fas fa-circle warn"></i>
+                                        {% else %}
+                                            {{componentData9[3]}}  <i class="fas fa-circle error"></i>
+                                {% endif %}            
+                            </div>
                         </div>
                         <!----------------------- Data ----------------------------------------------->
-                <!---------------------Seccion de Monitoreo de Graficas------------------------------>
-                <div id="gauge">
-                    <div class="tableTitle">
-                        <h2>Sesiones Maximas</h2>
-                    </div>
-                    <div>
-                        <div id="graphTile">
-                            <embed src="{{graph_data|safe}}" type="image/svg+xml" id="graphic">
-                        </div>
-                       
+                        <!----------------------- Data ----------------------------------------------->
+                        <!----------------------- Data ----------------------------------------------->
+                        <!----------------------- Data ----------------------------------------------->
                     </div>
                 </div>
-            </div>
+            </div>    
             <!---------------------Division de Pantalla Lado Derecho------------------------------->
             <div id="monitorRight">
-                <!---------------------Division de Pantalla Lado Derecho------------------------------->
-                 <div id="Tasks">
+                <!---------------------Seccion de monitoreo de Tareas------------------------------->
+                <div id="Tasks">
                     <div class="tableTitle">
                         <h2>Tareas</h2>
                     </div>
@@ -417,6 +503,18 @@
                         </div>
                         <!----------------------- Data ----------------------------------------------->
                     </div>
+                </div>
+            </div>
+            <!---------------------Division de Pantalla Lado Derecho------------------------------->
+            <div id="monitorBotom">
+                <!---------------------Seccion de Monitoreo de Graficas------------------------------>
+                <div id="gauge">
+                    <div class="tableTitle">
+                        <h2>Sesiones Maximas</h2>
+                    </div>
+                </div>
+                <div id="graphTile">
+                    <embed src="{{graph_data|safe}}" type="image/svg+xml" id="graphic">
                 </div>
             </div>
         </div>

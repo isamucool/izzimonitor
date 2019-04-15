@@ -40,14 +40,18 @@ body {
    
 }
 
+#wrapper {
+    display: flexbox;
+    flex-direction: column;
+}
 
 #monitorLeft{
-    flex-grow: 4;
+    flex-grow: 3;
     margin: 0px 5px;
 }
 
 #monitorRight{
-    flex-grow: 7;
+    flex-grow: 3;
     margin: 0px 5px;
 }
 .tableTitle{
@@ -85,39 +89,37 @@ body {
     
 }
 
-.run{
-    color: green;
-}
 
 .ok {
     color: blue;
     
 } 
 
+.run{
+    color: green;
+}
+
+.warn {
+    color: orange;
+}
+
 .error {
     color: red;
     animation: blinkRed 0.5s infinite;
 }
 
-@-webkit-keyframes blinkRed {
+@keyframes blinkRed {
     from { color: #F00; }
     50% { color: black; }
     to { color: #F00; }
 }
 
-
-
-.graphic{
-    
-}
-
-
-
 /* MediaQeurys para pantallas de mas de 1300 px de ancho */
-@media (min-width: 1000px){
+@media (min-width: 1300px){
     #wrapper {
-        display: inline-flex;
-        text-align: center;
+        display: flexbox;
+        flex-direction: row;
+        flex-wrap: wrap;
         width: 100%;
     }
     

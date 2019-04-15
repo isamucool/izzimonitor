@@ -4,7 +4,7 @@ import linecache
 
 
 fileToRead = 'LogConsultasSrvr2.txt'
-server1 = WhitespaceTokenizer().tokenize(linecache.getline(fileToRead,69))
+server1 = WhitespaceTokenizer().tokenize(linecache.getline(fileToRead,60))
 server2 = WhitespaceTokenizer().tokenize(linecache.getline('LogConsultasSrvr2.txt',70))
 server3 = WhitespaceTokenizer().tokenize(linecache.getline('LogConsultasSrvr2.txt',71))
 
