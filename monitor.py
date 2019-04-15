@@ -8,6 +8,7 @@ app = Flask(__name__, template_folder="templates", static_folder="static")
 
 
 def monitor():
+    #Archivo donde se realizara la lectura 
     fileToRead = 'LogConsultasSrvr2.txt'
     #lectura del archivo por lineas
     #lectura de status de servidores
@@ -44,6 +45,8 @@ def monitor():
     taskData11 = WhitespaceTokenizer().tokenize(linecache.getline(fileToRead,91))
     taskData12 = WhitespaceTokenizer().tokenize(linecache.getline(fileToRead,92))
     taskData13 = WhitespaceTokenizer().tokenize(linecache.getline(fileToRead,93))
+    
+    #Querys de base de datos
     
 
     #creacion de grafico para medidor para componente 1
