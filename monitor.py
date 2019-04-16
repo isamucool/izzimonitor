@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for
 from nltk.tokenize import WhitespaceTokenizer
 import linecache
 import pygal
+import dbConn
 
 app = Flask(__name__, template_folder="templates", static_folder="static")
 @app.route ('/monitor', methods = ['GET', 'POST'])
@@ -46,30 +47,36 @@ def monitor():
     taskData12 = WhitespaceTokenizer().tokenize(linecache.getline(fileToRead,92))
     taskData13 = WhitespaceTokenizer().tokenize(linecache.getline(fileToRead,93))
     
-    #Querys de base de datos
-    
 
-    #creacion de grafico para medidor para componente 1
-    
-    graph = pygal.SolidGauge(
-    half_pie=True, inner_radius=0.50,
-    style=pygal.style.styles['default'](value_font_size=10))
+    #Seccion de querys
+    queryEscalationRequest = dbConn.conn.execute('SELECT count(*) from siebel.s_escl_req WHERE CREATED >= TRUNC(SYSDATE)')
+    print("resultado fetchone")
+    resultadoQuery1 = queryEscalationRequest.fetchone()[0]
+    # queryEscalationRequest.close()
+    queryLoggedUsers = dbConn.conn.execute('SELECT COUNT (*) usuarios_activos FROM siebel.s_user su JOIN siebel.s_contact sc ON su.row_id = sc.row_id WHERE su.last_login_ts >= trunc(sysdate)')
+    resultadoQuery2 = queryLoggedUsers.fetchone()[0]
+    # queryLoggedUsers.close()
+    # dbConn.conn.close()
+   
+    # #creacion de grafico para medidor para componente 1 
+    # graph = pygal.SolidGauge(
+    # half_pie=True, inner_radius=0.50,
+    # style=pygal.style.styles['default'](value_font_size=10))
 
-    #percent_formatter = lambda x: '{:.10g}%'.format(x)
-    user_formatter = lambda x: '{:1g}'.format(x)
-    #graph.show_legend = False
-    graph.human_readable=True
-    graph.value_formatter = user_formatter
-    graph.add(componentData1[0] + '_' + componentData1[1], [{'value': int(componentData1[3]), 'max_value': int(componentData1[4])}])
-    graph.add(componentData2[0] + '_' + componentData2[1], [{'value': int(componentData2[3]), 'max_value': int(componentData2[4])}])
-    graph.add(componentData3[0] + '_' + componentData3[1], [{'value': int(componentData3[3]), 'max_value': int(componentData3[4])}])
-    graph.add(componentData4[0] + '_' + componentData4[1], [{'value': int(componentData3[3]), 'max_value': int(componentData3[4])}])
-    graph.add(componentData5[0] + '_' + componentData5[1], [{'value': int(componentData3[3]), 'max_value': int(componentData3[4])}])
-    graph.add(componentData6[0] + '_' + componentData6[1], [{'value': int(componentData3[3]), 'max_value': int(componentData3[4])}])
-    graph.add(componentData7[0] + '_' + componentData7[1], [{'value': int(componentData3[3]), 'max_value': int(componentData3[4])}])
-    graph.add(componentData8[0] + '_' + componentData8[1], [{'value': int(componentData3[3]), 'max_value': int(componentData3[4])}])
-    graph.add(componentData9[0] + '_' + componentData9[1], [{'value': int(componentData3[3]), 'max_value': int(componentData3[4])}])
-    graph_data = graph.render_data_uri()
+    # user_formatter = lambda x: '{:1g}'.format(x)
+    # #graph.show_legend = False
+    # graph.human_readable=True
+    # graph.value_formatter = user_formatter
+    # graph.add(componentData1[0] + '_' + componentData1[1], [{'value': int(componentData1[3]), 'max_value': int(componentData1[4])}])
+    # graph.add(componentData2[0] + '_' + componentData2[1], [{'value': int(componentData2[3]), 'max_value': int(componentData2[4])}])
+    # graph.add(componentData3[0] + '_' + componentData3[1], [{'value': int(componentData3[3]), 'max_value': int(componentData3[4])}])
+    # graph.add(componentData4[0] + '_' + componentData4[1], [{'value': int(componentData3[3]), 'max_value': int(componentData3[4])}])
+    # graph.add(componentData5[0] + '_' + componentData5[1], [{'value': int(componentData3[3]), 'max_value': int(componentData3[4])}])
+    # graph.add(componentData6[0] + '_' + componentData6[1], [{'value': int(componentData3[3]), 'max_value': int(componentData3[4])}])
+    # graph.add(componentData7[0] + '_' + componentData7[1], [{'value': int(componentData3[3]), 'max_value': int(componentData3[4])}])
+    # graph.add(componentData8[0] + '_' + componentData8[1], [{'value': int(componentData3[3]), 'max_value': int(componentData3[4])}])
+    # graph.add(componentData9[0] + '_' + componentData9[1], [{'value': int(componentData3[3]), 'max_value': int(componentData3[4])}])
+    # graph_data = graph.render_data_uri()
 
     #creacion de grafico para medidor para componente 2
     # graph2 = pygal.SolidGauge(
@@ -99,7 +106,7 @@ def monitor():
                             componentData7=componentData7,
                             componentData8=componentData8,
                             componentData9=componentData9,
-                            graph_data=graph_data,
+                            # graph_data=graph_data,
                             taskData1=taskData1,
                             taskData2=taskData2,
                             taskData3=taskData3,
@@ -112,7 +119,9 @@ def monitor():
                             taskData10=taskData10,
                             taskData11=taskData11,
                             taskData12=taskData12,
-                            taskData13=taskData13)
+                            taskData13=taskData13,
+                            resultadoQuery1=resultadoQuery1,
+                            resultadoQuery2=resultadoQuery2)
 
 if __name__ == '__main__':
     app.run(debug = True, port=7777)
