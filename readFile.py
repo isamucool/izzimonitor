@@ -1,6 +1,7 @@
 #File Objects
 from nltk.tokenize import WhitespaceTokenizer
 import linecache
+import re
 
 
 fileToRead = 'LogConsultasSrvr2.txt'

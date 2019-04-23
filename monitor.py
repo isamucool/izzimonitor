@@ -3,6 +3,7 @@ from nltk.tokenize import WhitespaceTokenizer
 import linecache
 import pygal
 import dbConn
+import re
 
 app = Flask(__name__, template_folder="templates", static_folder="static")
 @app.route ('/monitor', methods = ['GET', 'POST'])
