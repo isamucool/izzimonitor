@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for
 from nltk.tokenize import WhitespaceTokenizer
 import linecache
 import pygal
-import dbConn
+#import dbConn
 import re
 
 app = Flask(__name__, template_folder="templates", static_folder="static")
@@ -11,51 +11,55 @@ app = Flask(__name__, template_folder="templates", static_folder="static")
 
 def monitor():
     #Archivo donde se realizara la lectura 
-    fileToRead = 'LogConsultasSrvr2.txt'
+    fileToRead = 'LogConsultasSrvr3.txt'
     #lectura del archivo por lineas
     #lectura de status de servidores
-    serverData1 = WhitespaceTokenizer().tokenize(linecache.getline(fileToRead,27))
-    serverData2 = WhitespaceTokenizer().tokenize(linecache.getline(fileToRead,28))
-    serverData3 = WhitespaceTokenizer().tokenize(linecache.getline(fileToRead,29))
+    
+    serverData1 = WhitespaceTokenizer().tokenize(re.sub(r"(\w+)\s{1}(\w+)",r"\1-\2",linecache.getline(fileToRead,27)))
+    serverData2 = WhitespaceTokenizer().tokenize(re.sub(r"(\w+)\s{1}(\w+)",r"\1-\2",linecache.getline(fileToRead,28)))
+    serverData3 = WhitespaceTokenizer().tokenize(re.sub(r"(\w+)\s{1}(\w+)",r"\1-\2",linecache.getline(fileToRead,29)))
 
     #lectura de status de Componentes
-    componentData1 = WhitespaceTokenizer().tokenize(linecache.getline(fileToRead,39))
-    componentData2 = WhitespaceTokenizer().tokenize(linecache.getline(fileToRead,40))
-    componentData3 = WhitespaceTokenizer().tokenize(linecache.getline(fileToRead,41))
-    componentData4 = WhitespaceTokenizer().tokenize(linecache.getline(fileToRead,49))
-    componentData5 = WhitespaceTokenizer().tokenize(linecache.getline(fileToRead,50))
-    componentData6 = WhitespaceTokenizer().tokenize(linecache.getline(fileToRead,51))
-    componentData7 = WhitespaceTokenizer().tokenize(linecache.getline(fileToRead,59))
-    componentData8 = WhitespaceTokenizer().tokenize(linecache.getline(fileToRead,60))
-    componentData9 = WhitespaceTokenizer().tokenize(linecache.getline(fileToRead,61))
-    componentData7 = WhitespaceTokenizer().tokenize(linecache.getline(fileToRead,69))
-    componentData8 = WhitespaceTokenizer().tokenize(linecache.getline(fileToRead,70))
-    componentData9 = WhitespaceTokenizer().tokenize(linecache.getline(fileToRead,71))
+    componentData1 = WhitespaceTokenizer().tokenize(re.sub(r"(\w+)\s{1}(\w+)",r"\1-\2",linecache.getline(fileToRead,39)))
+    componentData2 = WhitespaceTokenizer().tokenize(re.sub(r"(\w+)\s{1}(\w+)",r"\1-\2",linecache.getline(fileToRead,40)))
+    componentData3 = WhitespaceTokenizer().tokenize(re.sub(r"(\w+)\s{1}(\w+)",r"\1-\2",linecache.getline(fileToRead,41)))
+    componentData4 = WhitespaceTokenizer().tokenize(re.sub(r"(\w+)\s{1}(\w+)",r"\1-\2",linecache.getline(fileToRead,49)))
+    componentData5 = WhitespaceTokenizer().tokenize(re.sub(r"(\w+)\s{1}(\w+)",r"\1-\2",linecache.getline(fileToRead,50)))
+    componentData6 = WhitespaceTokenizer().tokenize(re.sub(r"(\w+)\s{1}(\w+)",r"\1-\2",linecache.getline(fileToRead,51)))
+    componentData7 = WhitespaceTokenizer().tokenize(re.sub(r"(\w+)\s{1}(\w+)",r"\1-\2",linecache.getline(fileToRead,59)))
+    componentData8 = WhitespaceTokenizer().tokenize(re.sub(r"(\w+)\s{1}(\w+)",r"\1-\2",linecache.getline(fileToRead,60)))
+    componentData9 = WhitespaceTokenizer().tokenize(re.sub(r"(\w+)\s{1}(\w+)",r"\1-\2",linecache.getline(fileToRead,61)))
+    componentData7 = WhitespaceTokenizer().tokenize(re.sub(r"(\w+)\s{1}(\w+)",r"\1-\2",linecache.getline(fileToRead,69)))
+    componentData8 = WhitespaceTokenizer().tokenize(re.sub(r"(\w+)\s{1}(\w+)",r"\1-\2",linecache.getline(fileToRead,70)))
+    componentData9 = WhitespaceTokenizer().tokenize(re.sub(r"(\w+)\s{1}(\w+)",r"\1-\2",linecache.getline(fileToRead,71)))
     
     
     #lectura de status de Tareas Activas
-    taskData1 = WhitespaceTokenizer().tokenize(linecache.getline(fileToRead,81))
-    taskData2 = WhitespaceTokenizer().tokenize(linecache.getline(fileToRead,82))
-    taskData3 = WhitespaceTokenizer().tokenize(linecache.getline(fileToRead,83))
-    taskData4 = WhitespaceTokenizer().tokenize(linecache.getline(fileToRead,84))
-    taskData5 = WhitespaceTokenizer().tokenize(linecache.getline(fileToRead,85))
-    taskData6 = WhitespaceTokenizer().tokenize(linecache.getline(fileToRead,86))
-    taskData7 = WhitespaceTokenizer().tokenize(linecache.getline(fileToRead,87))
-    taskData8 = WhitespaceTokenizer().tokenize(linecache.getline(fileToRead,88))
-    taskData9 = WhitespaceTokenizer().tokenize(linecache.getline(fileToRead,89))
-    taskData10 = WhitespaceTokenizer().tokenize(linecache.getline(fileToRead,90))
-    taskData11 = WhitespaceTokenizer().tokenize(linecache.getline(fileToRead,91))
-    taskData12 = WhitespaceTokenizer().tokenize(linecache.getline(fileToRead,92))
-    taskData13 = WhitespaceTokenizer().tokenize(linecache.getline(fileToRead,93))
+    taskData1 = WhitespaceTokenizer().tokenize(re.sub(r"(\w+)\s{1}(\w+)",r"\1-\2",linecache.getline(fileToRead,81)))
+    taskData2 = WhitespaceTokenizer().tokenize(re.sub(r"(\w+)\s{1}(\w+)",r"\1-\2",linecache.getline(fileToRead,82)))
+    taskData3 = WhitespaceTokenizer().tokenize(re.sub(r"(\w+)\s{1}(\w+)",r"\1-\2",linecache.getline(fileToRead,83)))
+    taskData4 = WhitespaceTokenizer().tokenize(re.sub(r"(\w+)\s{1}(\w+)",r"\1-\2",linecache.getline(fileToRead,84)))
+    taskData5 = WhitespaceTokenizer().tokenize(re.sub(r"(\w+)\s{1}(\w+)",r"\1-\2",linecache.getline(fileToRead,85)))
+    taskData6 = WhitespaceTokenizer().tokenize(re.sub(r"(\w+)\s{1}(\w+)",r"\1-\2",linecache.getline(fileToRead,86)))
+    taskData7 = WhitespaceTokenizer().tokenize(re.sub(r"(\w+)\s{1}(\w+)",r"\1-\2",linecache.getline(fileToRead,87)))
+    taskData8 = WhitespaceTokenizer().tokenize(re.sub(r"(\w+)\s{1}(\w+)",r"\1-\2",linecache.getline(fileToRead,88)))
+    taskData9 = WhitespaceTokenizer().tokenize(re.sub(r"(\w+)\s{1}(\w+)",r"\1-\2",linecache.getline(fileToRead,89)))
+    taskData10 = WhitespaceTokenizer().tokenize(re.sub(r"(\w+)\s{1}(\w+)",r"\1-\2",linecache.getline(fileToRead,90)))
+    taskData11 = WhitespaceTokenizer().tokenize(re.sub(r"(\w+)\s{1}(\w+)",r"\1-\2",linecache.getline(fileToRead,91)))
+    taskData12 = WhitespaceTokenizer().tokenize(re.sub(r"(\w+)\s{1}(\w+)",r"\1-\2",linecache.getline(fileToRead,92)))
+    taskData13 = WhitespaceTokenizer().tokenize(re.sub(r"(\w+)\s{1}(\w+)",r"\1-\2",linecache.getline(fileToRead,93)))
     
 
     #Seccion de querys
-    queryEscalationRequest = dbConn.conn.execute('SELECT count(*) from siebel.s_escl_req WHERE CREATED >= TRUNC(SYSDATE)')
-    print("resultado fetchone")
-    resultadoQuery1 = queryEscalationRequest.fetchone()[0]
+    #Query dummys
+    resultadoQuery1 = "Dummy1"
+    resultadoQuery2 = "Dummy2"
+    # queryEscalationRequest = dbConn.conn.execute('SELECT count(*) from siebel.s_escl_req WHERE CREATED >= TRUNC(SYSDATE)')
+    # print("resultado fetchone")
+    # resultadoQuery1 = queryEscalationRequest.fetchone()[0]
     # queryEscalationRequest.close()
-    queryLoggedUsers = dbConn.conn.execute('SELECT COUNT (*) usuarios_activos FROM siebel.s_user su JOIN siebel.s_contact sc ON su.row_id = sc.row_id WHERE su.last_login_ts >= trunc(sysdate)')
-    resultadoQuery2 = queryLoggedUsers.fetchone()[0]
+    # queryLoggedUsers = dbConn.conn.execute('SELECT COUNT (*) usuarios_activos FROM siebel.s_user su JOIN siebel.s_contact sc ON su.row_id = sc.row_id WHERE su.last_login_ts >= trunc(sysdate)')
+    # resultadoQuery2 = queryLoggedUsers.fetchone()[0]
     # queryLoggedUsers.close()
     # dbConn.conn.close()
    

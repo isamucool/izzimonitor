@@ -2,12 +2,12 @@ import re
 import linecache
 from nltk.tokenize import WhitespaceTokenizer
 
-server2 = WhitespaceTokenizer().tokenize(linecache.getline('LogConsultasSrvr2.txt',70))
+server2 = WhitespaceTokenizer().tokenize(linecache.getline('LogConsultasSrvr3.txt',61))
 print (server2)
 print ("----------------------------------------------------------")
 
 print ("Esta es la linea ")
-pepe = linecache.getline('LogConsultasSrvr2.txt',70)
+pepe = linecache.getline('LogConsultasSrvr3.txt',61)
 
 print (pepe)
 
@@ -15,7 +15,7 @@ print ("Esta es la linea cambiada")
 
 # pepe2 = re.sub("(\w+)\s{1}(\w+)",r"\1_\2", pepe)
 
-pepe2 = re.sub(r"(_)","-",pepe)
+pepe2 = re.sub(r"(\w+)\s{1}(\w+)",r"\1-\2",pepe)
 
 print(pepe2)
 
@@ -25,9 +25,10 @@ print(pepe3)
 # import re
 
 # print ("aguitaa¬amarilla")
+print("prueba")
+pepefinal = WhitespaceTokenizer().tokenize(re.sub(r"(\w+)\s{1}(\w+)",r"\1-\2",linecache.getline('LogConsultasSrvr3.txt',61)))
 
-
-
+print (pepefinal)
 # strings = ["CVSOUIMA  AsgnBatch  Activado           0                 20            ",
 # "CVSOUIMB  AsgnBatch  Apagar sistema     0                 20            ",
 # "CVSOUIMC  AsgnBatch  Apagar sistema     0                 20            ",

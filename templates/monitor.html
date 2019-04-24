@@ -41,11 +41,11 @@
                             <div>{{serverData1[0]}}</div>
                             <div>
                                 {% if serverData1[2] == 'Ejecutando' %}
-                                    {{serverData1[2]}}  <i class="fas fa-circle run"></i>
+                                    {{serverData1[2]}}&emsp;<i class="fas fa-circle run"></i>
                                     {% elif serverData1[2] == 'Activado' %}
-                                        {{serverData1[2]}}  <i class="fas fa-circle ok"></i>
+                                        {{serverData1[2]}}&emsp;<i class="fas fa-circle ok"></i>
                                         {% else %}
-                                            {{serverData1[2]}}  <i class="fas fa-circle error"></i>
+                                            {{serverData1[2]}}&emsp;<i class="fas fa-circle error"></i>
                                 {% endif %}  
                             </div>                            
                             <div>{{serverData1[1]}}</div>
@@ -56,11 +56,11 @@
                             <div>{{serverData2[0]}}</div>
                             <div>
                                 {% if serverData2[2] == 'Ejecutando' %}
-                                    {{serverData2[2]}}  <i class="fas fa-circle run"></i>
+                                    {{serverData2[2]}}&emsp;<i class="fas fa-circle run"></i>
                                     {% elif serverData2[2] == 'Activado' %}
-                                        {{serverData2[2]}}  <i class="fas fa-circle ok"></i>
+                                        {{serverData2[2]}}&emsp;<i class="fas fa-circle ok"></i>
                                         {% else %}
-                                            {{serverData2[2]}}  <i class="fas fa-circle error"></i>
+                                            {{serverData2[2]}}&emsp;<i class="fas fa-circle error"></i>
                                 {% endif %}  
                             </div>                            
                             <div>{{serverData2[1]}}</div>
@@ -71,11 +71,11 @@
                             <div>{{serverData3[0]}}</div>
                             <div>
                                 {% if serverData3[2] == 'Ejecutando' %}
-                                    {{serverData3[2]}}  <i class="fas fa-circle run"></i>
+                                    {{serverData3[2]}}&emsp;<i class="fas fa-circle run"></i>
                                     {% elif serverData3[2] == 'Activado' %}
-                                        {{serverData3[2]}}  <i class="fas fa-circle ok"></i>
+                                        {{serverData3[2]}}&emsp;<i class="fas fa-circle ok"></i>
                                         {% else %}
-                                            {{serverData3[2]}}  <i class="fas fa-circle error"></i>
+                                            {{serverData3[2]}}&emsp;<i class="fas fa-circle error"></i>
                                 {% endif %}  
                             </div>                            
                             <div>{{serverData3[1]}}</div>
@@ -102,20 +102,20 @@
                             <div>{{componentData1[1]}}</div>
                             <div>
                                 {% if componentData1[2] == 'Ejecutando' %}
-                                    {{componentData1[2]}}  <i class="fas fa-circle run"></i>
+                                    {{componentData1[2]}}&emsp;<i class="fas fa-circle run"></i>
                                         {% elif componentData1[2] == 'Activado' %}
-                                            {{componentData1[2]}}  <i class="fas fa-circle ok"></i>
+                                            {{componentData1[2]}}&emsp;<i class="fas fa-circle ok"></i>
                                             {% else %}
-                                                {{componentData1[2]}}  <i class="fas fa-circle error"></i>
+                                                {{componentData1[2]}}&emsp;<i class="fas fa-circle error"></i>
                                 {% endif %}
                             </div>
                             <div>
                                 {% if componentData1[3]|int <= componentData1[4]|int * 0.50 %}  
-                                    {{componentData1[3]}}  <i class="fas fa-circle run"></i>
+                                    {{componentData1[3]}}&emsp;<i class="fas fa-circle run"></i>
                                     {% elif componentData1[3]|int < componentData1[4]|int * 0.75 %}
-                                        {{componentData1[3]}}  <i class="fas fa-circle warn"></i>
+                                        {{componentData1[3]}}&emsp;<i class="fas fa-circle warn"></i>
                                         {% else %}
-                                            {{componentData1[3]}}  <i class="fas fa-circle error"></i>
+                                            {{componentData1[3]}}&emsp;<i class="fas fa-circle error"></i>
                                 {% endif %}            
                             </div> 
                         </div>
@@ -126,20 +126,20 @@
                             <div>{{componentData2[1]}}</div>
                             <div>
                                 {% if componentData2[2] == 'Ejecutando' %}
-                                    {{componentData2[2]}}  <i class="fas fa-circle run"></i>
+                                    {{componentData2[2]}}&emsp;<i class="fas fa-circle run"></i>
                                         {% elif componentData2[2] == 'Activado' %}
-                                            {{componentData2[2]}}  <i class="fas fa-circle ok"></i>
+                                            {{componentData2[2]}}&emsp;<i class="fas fa-circle ok"></i>
                                             {% else %}
-                                                {{componentData2[2]}}  <i class="fas fa-circle error"></i>
+                                                {{componentData2[2]}}&emsp;<i class="fas fa-circle error"></i>
                                 {% endif %}
                             </div>
                             <div>
                                 {% if componentData2[3]|int <= componentData2[4]|int * 0.50 %}  
-                                    {{componentData2[3]}}  <i class="fas fa-circle run"></i>
+                                    {{componentData2[3]}}&emsp;<i class="fas fa-circle run"></i>
                                     {% elif componentData2[3]|int < componentData2[4]|int * 0.75 %}
-                                        {{componentData2[3]}}  <i class="fas fa-circle warn"></i>
+                                        {{componentData2[3]}}&emsp;<i class="fas fa-circle warn"></i>
                                         {% else %}
-                                            {{componentData2[3]}}  <i class="fas fa-circle error"></i>
+                                            {{componentData2[3]}}&emsp;<i class="fas fa-circle error"></i>
                                 {% endif %}            
                             </div> 
                         </div>
@@ -150,20 +150,20 @@
                             <div>{{componentData3[1]}}</div>
                             <div>
                                 {% if componentData3[2] == 'Ejecutando' %}
-                                    {{componentData3[2]}}  <i class="fas fa-circle run"></i>
+                                    {{componentData3[2]}}&emsp;<i class="fas fa-circle run"></i>
                                         {% elif componentData3[2] == 'Activado' %}
-                                            {{componentData3[2]}}  <i class="fas fa-circle ok"></i>
+                                            {{componentData3[2]}}&emsp;<i class="fas fa-circle ok"></i>
                                             {% else %}
-                                                {{componentData3[2]}}  <i class="fas fa-circle error"></i>
+                                                {{componentData3[2]}}&emsp;<i class="fas fa-circle error"></i>
                                 {% endif %}
                             </div>
                             <div>
                                 {% if componentData3[3]|int <= componentData3[4]|int * 0.50 %}  
-                                    {{componentData3[3]}}  <i class="fas fa-circle run"></i>
+                                    {{componentData3[3]}}&emsp;<i class="fas fa-circle run"></i>
                                     {% elif componentData3[3]|int < componentData3[4]|int * 0.75 %}
-                                        {{componentData3[3]}}  <i class="fas fa-circle warn"></i>
+                                        {{componentData3[3]}}&emsp;<i class="fas fa-circle warn"></i>
                                         {% else %}
-                                            {{componentData3[3]}}  <i class="fas fa-circle error"></i>
+                                            {{componentData3[3]}}&emsp;<i class="fas fa-circle error"></i>
                                 {% endif %}            
                             </div>
                         </div>
@@ -174,20 +174,20 @@
                             <div>{{componentData4[1]}}</div>
                             <div>
                                 {% if componentData4[2] == 'Ejecutando' %}
-                                    {{componentData4[2]}}  <i class="fas fa-circle run"></i>
+                                    {{componentData4[2]}}&emsp;<i class="fas fa-circle run"></i>
                                         {% elif componentData4[2] == 'Activado' %}
-                                            {{componentData4[2]}}  <i class="fas fa-circle ok"></i>
+                                            {{componentData4[2]}}&emsp;<i class="fas fa-circle ok"></i>
                                             {% else %}
-                                                {{componentData4[2]}}  <i class="fas fa-circle error"></i>
+                                                {{componentData4[2]}}&emsp;<i class="fas fa-circle error"></i>
                                 {% endif %}
                             </div>
                             <div>
                                 {% if componentData4[3]|int <= componentData4[4]|int * 0.50 %}  
-                                    {{componentData4[3]}}  <i class="fas fa-circle run"></i>
+                                    {{componentData4[3]}}&emsp;<i class="fas fa-circle run"></i>
                                     {% elif componentData4[3]|int < componentData4[4]|int * 0.75 %}
-                                        {{componentData4[3]}}  <i class="fas fa-circle warn"></i>
+                                        {{componentData4[3]}}&emsp;<i class="fas fa-circle warn"></i>
                                         {% else %}
-                                            {{componentData4[3]}}  <i class="fas fa-circle error"></i>
+                                            {{componentData4[3]}}&emsp;<i class="fas fa-circle error"></i>
                                 {% endif %}            
                             </div>
                         </div>
@@ -198,20 +198,20 @@
                             <div>{{componentData5[1]}}</div>
                             <div>
                                 {% if componentData5[2] == 'Ejecutando' %}
-                                    {{componentData5[2]}}  <i class="fas fa-circle run"></i>
+                                    {{componentData5[2]}}&emsp;<i class="fas fa-circle run"></i>
                                         {% elif componentData5[2] == 'Activado' %}
-                                            {{componentData5[2]}}  <i class="fas fa-circle ok"></i>
+                                            {{componentData5[2]}}&emsp;<i class="fas fa-circle ok"></i>
                                             {% else %}
-                                                {{componentData5[2]}}  <i class="fas fa-circle error"></i>
+                                                {{componentData5[2]}}&emsp;<i class="fas fa-circle error"></i>
                                 {% endif %}
                             </div>
                             <div>
                                 {% if componentData5[3]|int <= componentData5[4]|int * 0.50 %}  
-                                    {{componentData5[3]}}  <i class="fas fa-circle run"></i>
+                                    {{componentData5[3]}}&emsp;<i class="fas fa-circle run"></i>
                                     {% elif componentData5[3]|int < componentData5[4]|int * 0.75 %}
-                                        {{componentData5[3]}}  <i class="fas fa-circle warn"></i>
+                                        {{componentData5[3]}}&emsp;<i class="fas fa-circle warn"></i>
                                         {% else %}
-                                            {{componentData5[3]}}  <i class="fas fa-circle error"></i>
+                                            {{componentData5[3]}}&emsp;<i class="fas fa-circle error"></i>
                                 {% endif %}            
                             </div>
                         </div>
@@ -222,20 +222,20 @@
                             <div>{{componentData6[1]}}</div>
                             <div>
                                 {% if componentData6[2] == 'Ejecutando' %}
-                                    {{componentData6[2]}}  <i class="fas fa-circle run"></i>
+                                    {{componentData6[2]}}&emsp;<i class="fas fa-circle run"></i>
                                         {% elif componentData6[2] == 'Activado' %}
-                                            {{componentData6[2]}}  <i class="fas fa-circle ok"></i>
+                                            {{componentData6[2]}}&emsp;<i class="fas fa-circle ok"></i>
                                             {% else %}
-                                                {{componentData6[2]}}  <i class="fas fa-circle error"></i>
+                                                {{componentData6[2]}}&emsp;<i class="fas fa-circle error"></i>
                                 {% endif %}
                             </div>
                             <div>
                                 {% if componentData6[3]|int <= componentData6[4]|int * 0.50 %}  
-                                    {{componentData6[3]}}  <i class="fas fa-circle run"></i>
+                                    {{componentData6[3]}}&emsp;<i class="fas fa-circle run"></i>
                                     {% elif componentData6[3]|int < componentData6[4]|int * 0.75 %}
-                                        {{componentData6[3]}}  <i class="fas fa-circle warn"></i>
+                                        {{componentData6[3]}}&emsp;<i class="fas fa-circle warn"></i>
                                         {% else %}
-                                            {{componentData6[3]}}  <i class="fas fa-circle error"></i>
+                                            {{componentData6[3]}}&emsp;<i class="fas fa-circle error"></i>
                                 {% endif %}            
                             </div>
                         </div>
@@ -246,20 +246,20 @@
                             <div>{{componentData7[1]}}</div>
                             <div>
                                 {% if componentData7[2] == 'Ejecutando' %}
-                                    {{componentData7[2]}}  <i class="fas fa-circle run"></i>
+                                    {{componentData7[2]}}&emsp;<i class="fas fa-circle run"></i>
                                         {% elif componentData7[2] == 'Activado' %}
-                                            {{componentData7[2]}}  <i class="fas fa-circle ok"></i>
+                                            {{componentData7[2]}}&emsp;<i class="fas fa-circle ok"></i>
                                             {% else %}
-                                                {{componentData7[2]}}  <i class="fas fa-circle error"></i>
+                                                {{componentData7[2]}}&emsp;<i class="fas fa-circle error"></i>
                                 {% endif %}
                             </div>
                             <div>
                                 {% if componentData7[3]|int <= componentData7[4]|int * 0.50 %}  
-                                    {{componentData7[3]}}  <i class="fas fa-circle run"></i>
+                                    {{componentData7[3]}}&emsp;<i class="fas fa-circle run"></i>
                                     {% elif componentData7[3]|int < componentData7[4]|int * 0.75 %}
-                                        {{componentData7[3]}}  <i class="fas fa-circle warn"></i>
+                                        {{componentData7[3]}}&emsp;<i class="fas fa-circle warn"></i>
                                         {% else %}
-                                            {{componentData7[3]}}  <i class="fas fa-circle error"></i>
+                                            {{componentData7[3]}}&emsp;<i class="fas fa-circle error"></i>
                                 {% endif %}            
                             </div>
                         </div>
@@ -270,20 +270,20 @@
                             <div>{{componentData8[1]}}</div>
                             <div>
                                 {% if componentData8[2] == 'Ejecutando' %}
-                                    {{componentData8[2]}}  <i class="fas fa-circle run"></i>
+                                    {{componentData8[2]}}&emsp;<i class="fas fa-circle run"></i>
                                         {% elif componentData8[2] == 'Activado' %}
-                                            {{componentData8[2]}}  <i class="fas fa-circle ok"></i>
+                                            {{componentData8[2]}}&emsp;<i class="fas fa-circle ok"></i>
                                             {% else %}
-                                                {{componentData8[2]}}  <i class="fas fa-circle error"></i>
+                                                {{componentData8[2]}}&emsp;<i class="fas fa-circle error"></i>
                                 {% endif %}
                             </div>
                             <div>
                                 {% if componentData8[3]|int <= componentData8[4]|int * 0.50 %}  
-                                    {{componentData8[3]}}  <i class="fas fa-circle run"></i>
+                                    {{componentData8[3]}}&emsp;<i class="fas fa-circle run"></i>
                                     {% elif componentData8[3]|int < componentData8[4]|int * 0.75 %}
-                                        {{componentData8[3]}}  <i class="fas fa-circle warn"></i>
+                                        {{componentData8[3]}}&emsp;<i class="fas fa-circle warn"></i>
                                         {% else %}
-                                            {{componentData8[3]}}  <i class="fas fa-circle error"></i>
+                                            {{componentData8[3]}}&emsp;<i class="fas fa-circle error"></i>
                                 {% endif %}            
                             </div>
                         </div>
@@ -294,20 +294,20 @@
                             <div>{{componentData9[1]}}</div>
                             <div>
                                 {% if componentData9[2] == 'Ejecutando' %}
-                                    {{componentData9[2]}}  <i class="fas fa-circle run"></i>
+                                    {{componentData9[2]}}&emsp;<i class="fas fa-circle run"></i>
                                         {% elif componentData9[2] == 'Activado' %}
-                                            {{componentData9[2]}}  <i class="fas fa-circle ok"></i>
+                                            {{componentData9[2]}}&emsp;<i class="fas fa-circle ok"></i>
                                             {% else %}
-                                                {{componentData9[2]}}  <i class="fas fa-circle error"></i>
+                                                {{componentData9[2]}}&emsp;<i class="fas fa-circle error"></i>
                                 {% endif %}
                             </div>
                             <div>
                                 {% if componentData9[3]|int <= componentData9[4]|int * 0.50 %}  
-                                    {{componentData9[3]}}  <i class="fas fa-circle run"></i>
+                                    {{componentData9[3]}}&emsp;<i class="fas fa-circle run"></i>
                                     {% elif componentData9[3]|int < componentData9[4]|int * 0.75 %}
-                                        {{componentData9[3]}}  <i class="fas fa-circle warn"></i>
+                                        {{componentData9[3]}}&emsp;<i class="fas fa-circle warn"></i>
                                         {% else %}
-                                            {{componentData9[3]}}  <i class="fas fa-circle error"></i>
+                                            {{componentData9[3]}}&emsp;<i class="fas fa-circle error"></i>
                                 {% endif %}            
                             </div>
                         </div>
@@ -362,9 +362,9 @@
                             <div>{{taskData1[2]}}</div>
                             <div>{{taskData1[3]}}</div>
                             {% if taskData1[4] == 'Finalizado' %}
-                                <div>{{taskData1[4]}}  <i class="fas fa-circle run"></i></div>
+                                <div>{{taskData1[4]}}&emsp;<i class="fas fa-circle run"></i></div>
                                 {% else %}
-                                    <div>{{taskData1[4]}}  <i class="fas fa-circle error"></i></div>
+                                    <div>{{taskData1[4]}}&emsp;<i class="fas fa-circle error"></i></div>
                             {% endif %} 
                         </div>
                         <!----------------------- Data ----------------------------------------------->
@@ -375,9 +375,9 @@
                             <div>{{taskData2[2]}}</div>
                             <div>{{taskData2[3]}}</div>
                             {% if taskData2[4] == 'Finalizado' %}
-                                <div>{{taskData2[4]}}  <i class="fas fa-circle run"></i></div>
+                                <div>{{taskData2[4]}}&emsp;<i class="fas fa-circle run"></i></div>
                                 {% else %}
-                                    <div>{{taskData2[4]}}  <i class="fas fa-circle error"></i></div>
+                                    <div>{{taskData2[4]}}&emsp;<i class="fas fa-circle error"></i></div>
                             {% endif %} 
                         </div>
                         <!----------------------- Data ----------------------------------------------->
@@ -388,9 +388,9 @@
                             <div>{{taskData3[2]}}</div>
                             <div>{{taskData3[3]}}</div>
                             {% if taskData3[4] == 'Finalizado' %}
-                                <div>{{taskData3[4]}}  <i class="fas fa-circle run"></i></div>
+                                <div>{{taskData3[4]}}&emsp;<i class="fas fa-circle run"></i></div>
                                 {% else %}
-                                    <div>{{taskData3[4]}}  <i class="fas fa-circle error"></i></div>
+                                    <div>{{taskData3[4]}}&emsp;<i class="fas fa-circle error"></i></div>
                             {% endif %} 
                         </div>
                         <!----------------------- Data ----------------------------------------------->
@@ -401,9 +401,9 @@
                             <div>{{taskData4[2]}}</div>
                             <div>{{taskData4[3]}}</div>
                             {% if taskData4[4] == 'Finalizado' %}
-                                <div>{{taskData4[4]}}  <i class="fas fa-circle run"></i></div>
+                                <div>{{taskData4[4]}}&emsp;<i class="fas fa-circle run"></i></div>
                                 {% else %}
-                                    <div>{{taskData4[4]}}  <i class="fas fa-circle error"></i></div>
+                                    <div>{{taskData4[4]}}&emsp;<i class="fas fa-circle error"></i></div>
                             {% endif %} 
                         </div>
                         <!----------------------- Data ----------------------------------------------->
@@ -414,9 +414,9 @@
                             <div>{{taskData5[2]}}</div>
                             <div>{{taskData5[3]}}</div>
                             {% if taskData5[4] == 'Finalizado' %}
-                                <div>{{taskData5[4]}}  <i class="fas fa-circle run"></i></div>
+                                <div>{{taskData5[4]}}&emsp;<i class="fas fa-circle run"></i></div>
                                 {% else %}
-                                    <div>{{taskData5[4]}}  <i class="fas fa-circle error"></i></div>
+                                    <div>{{taskData5[4]}}&emsp;<i class="fas fa-circle error"></i></div>
                             {% endif %} 
                         </div>
                         <!----------------------- Data ----------------------------------------------->
@@ -427,9 +427,9 @@
                             <div>{{taskData6[2]}}</div>
                             <div>{{taskData6[3]}}</div>
                             {% if taskData6[4] == 'Finalizado' %}
-                                <div>{{taskData6[4]}}  <i class="fas fa-circle run"></i></div>
+                                <div>{{taskData6[4]}}&emsp;<i class="fas fa-circle run"></i></div>
                                 {% else %}
-                                    <div>{{taskData6[4]}}  <i class="fas fa-circle error"></i></div>
+                                    <div>{{taskData6[4]}}&emsp;<i class="fas fa-circle error"></i></div>
                             {% endif %} 
                         </div>
                         <!----------------------- Data ----------------------------------------------->
@@ -440,9 +440,9 @@
                             <div>{{taskData7[2]}}</div>
                             <div>{{taskData7[3]}}</div>
                             {% if taskData7[4] == 'Finalizado' %}
-                                <div>{{taskData7[4]}}  <i class="fas fa-circle run"></i></div>
+                                <div>{{taskData7[4]}}&emsp;<i class="fas fa-circle run"></i></div>
                                 {% else %}
-                                    <div>{{taskData7[4]}}  <i class="fas fa-circle error"></i></div>
+                                    <div>{{taskData7[4]}}&emsp;<i class="fas fa-circle error"></i></div>
                             {% endif %} 
                         </div>
                         <!----------------------- Data ----------------------------------------------->
@@ -453,9 +453,9 @@
                             <div>{{taskData8[2]}}</div>
                             <div>{{taskData8[3]}}</div>
                             {% if taskData8[4] == 'Finalizado' %}
-                                <div>{{taskData8[4]}}  <i class="fas fa-circle run"></i></div>
+                                <div>{{taskData8[4]}}&emsp;<i class="fas fa-circle run"></i></div>
                                 {% else %}
-                                    <div>{{taskData8[4]}}  <i class="fas fa-circle error"></i></div>
+                                    <div>{{taskData8[4]}}&emsp;<i class="fas fa-circle error"></i></div>
                             {% endif %}  
                         </div>
                         <!----------------------- Data ----------------------------------------------->
@@ -466,9 +466,9 @@
                             <div>{{taskData9[2]}}</div>
                             <div>{{taskData9[3]}}</div>
                             {% if taskData9[4] == 'Finalizado' %}
-                                <div>{{taskData9[4]}}  <i class="fas fa-circle run"></i></div>
+                                <div>{{taskData9[4]}}&emsp;<i class="fas fa-circle run"></i></div>
                                 {% else %}
-                                    <div>{{taskData9[4]}}  <i class="fas fa-circle error"></i></div>
+                                    <div>{{taskData9[4]}}&emsp;<i class="fas fa-circle error"></i></div>
                             {% endif %}  
                         </div>
                         <!----------------------- Data ----------------------------------------------->
@@ -479,9 +479,9 @@
                             <div>{{taskData10[2]}}</div>
                             <div>{{taskData10[3]}}</div>
                             {% if taskData10[4] == 'Finalizado' %}
-                                <div>{{taskData10[4]}}  <i class="fas fa-circle run"></i></div>
+                                <div>{{taskData10[4]}}&emsp;<i class="fas fa-circle run"></i></div>
                                 {% else %}
-                                    <div>{{taskData10[4]}}  <i class="fas fa-circle error"></i></div>
+                                    <div>{{taskData10[4]}}&emsp;<i class="fas fa-circle error"></i></div>
                             {% endif %} 
                         </div>
                         <!----------------------- Data ----------------------------------------------->
@@ -492,9 +492,9 @@
                             <div>{{taskData11[2]}}</div>
                             <div>{{taskData11[3]}}</div>
                             {% if taskData11[4] == 'Finalizado' %}
-                                <div>{{taskData11[4]}}  <i class="fas fa-circle run"></i></div>
+                                <div>{{taskData11[4]}}&emsp;<i class="fas fa-circle run"></i></div>
                                 {% else %}
-                                    <div>{{taskData11[4]}}  <i class="fas fa-circle error"></i></div>
+                                    <div>{{taskData11[4]}}&emsp;<i class="fas fa-circle error"></i></div>
                             {% endif %} 
                         </div>
                         <!----------------------- Data ----------------------------------------------->
@@ -505,9 +505,9 @@
                             <div>{{taskData12[2]}}</div>
                             <div>{{taskData12[3]}}</div>
                             {% if taskData12[4] == 'Finalizado' %}
-                                <div>{{taskData12[4]}}  <i class="fas fa-circle run"></i></div>
+                                <div>{{taskData12[4]}}&emsp;<i class="fas fa-circle run"></i></div>
                                 {% else %}
-                                    <div>{{taskData12[4]}}  <i class="fas fa-circle error"></i></div>
+                                    <div>{{taskData12[4]}}&emsp;<i class="fas fa-circle error"></i></div>
                             {% endif %} 
                         </div>
                         <!----------------------- Data ----------------------------------------------->
@@ -518,9 +518,9 @@
                             <div>{{taskData13[2]}}</div>
                             <div>{{taskData13[3]}}</div>
                             {% if taskData13[4] == 'Finalizado' %}
-                                <div>{{taskData13[4]}}  <i class="fas fa-circle run"></i></div>
+                                <div>{{taskData13[4]}}&emsp;<i class="fas fa-circle run"></i></div>
                                 {% else %}
-                                    <div>{{taskData13[4]}}  <i class="fas fa-circle error"></i></div>
+                                    <div>{{taskData13[4]}}&emsp;<i class="fas fa-circle error"></i></div>
                             {% endif %} 
                         </div>
                         <!----------------------- Data ----------------------------------------------->
