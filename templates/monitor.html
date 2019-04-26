@@ -100,14 +100,26 @@
                         <div class="tableRow">
                             <div>{{componentData1[0]}}</div>
                             <div>{{componentData1[1]}}</div>
-                            <div>
-                                {% if componentData1[2] == 'Ejecutando' %}
+                            <div id="test">
+                                <div class="innerCell">
+                                    {{componentData1[2]}}
+                                </div>
+                                <div class="innerCell">
+                                    {% if componentData1[2] == 'Ejecutando' %}
+                                        {<i class="fas fa-circle run"></i>
+                                            {% elif componentData1[2] == 'Activado' %}
+                                                <i class="fas fa-circle ok"></i>
+                                                {% else %}
+                                                    <i class="fas fa-circle error"></i>
+                                    {% endif %}    
+                                </div>
+                                <!-- {% if componentData1[2] == 'Ejecutando' %}
                                     {{componentData1[2]}}&emsp;<i class="fas fa-circle run"></i>
                                         {% elif componentData1[2] == 'Activado' %}
                                             {{componentData1[2]}}&emsp;<i class="fas fa-circle ok"></i>
                                             {% else %}
                                                 {{componentData1[2]}}&emsp;<i class="fas fa-circle error"></i>
-                                {% endif %}
+                                {% endif %} -->
                             </div>
                             <div>
                                 {% if componentData1[3]|int <= componentData1[4]|int * 0.50 %}  
@@ -292,7 +304,7 @@
                         <div class="tableRow">
                             <div>{{componentData9[0]}}</div>
                             <div>{{componentData9[1]}}</div>
-                            <div>
+                            <div id="test">
                                 {% if componentData9[2] == 'Ejecutando' %}
                                     {{componentData9[2]}}&emsp;<i class="fas fa-circle run"></i>
                                         {% elif componentData9[2] == 'Activado' %}

@@ -122,6 +122,18 @@ body {
     to { color: #F00; }
 }
 
+#test {
+    display: inline-flex;
+    justify-content: center;
+    
+}
+
+.innerCell {
+    border: 0px;
+    background-color: #F00;
+}
+
+
 /* MediaQeurys para pantallas de mas de 1300 px de ancho */
 @media (min-width: 1300px){
     #wrapper {
@@ -131,7 +143,6 @@ body {
     }
     
 }
-
 
 
 
